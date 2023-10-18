@@ -1,0 +1,8 @@
+* {
+    background:     #000000;  /* Dark Charcoal */
+    foreground:     #BBBBBB;  /* Light Gray */
+    background-alt: #121212;  /* Slightly Darker Charcoal */
+    selected:       #6DA7E6;  /* Soft Blue */
+    active:         #AA445F;  /* Deep Red */
+    urgent:         #65AA6E;  /* Vibrant Green */
+}

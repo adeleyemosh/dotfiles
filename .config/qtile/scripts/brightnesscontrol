@@ -1,0 +1,97 @@
+#!/bin/bash
+
+# Icons directory
+ICON_DIR="$HOME/.config/qtile/icons/dunst/"
+
+# Check for dependencies
+check_dependencies() {
+    if ! command -v brightnessctl &>/dev/null && ! command -v light &>/dev/null; then
+        echo "Error: Required tools 'brightnessctl' and 'light' are not installed."
+        exit 1
+    fi
+    if ! command -v dunstify &>/dev/null; then
+        echo "Error: 'dunstify' is not installed. Install Dunst to show notifications."
+        exit 1
+    fi
+}
+
+# Get the graphics card
+CARD=$(ls /sys/class/backlight | head -n 1)
+
+# Get the current brightness
+get_brightness() {
+    if [[ "$CARD" == *"intel_"* ]]; then
+        BRIGHTNESS=$(brightnessctl --device='intel_backlight' get)
+        BRIGHTNESS=$((BRIGHTNESS *100 / 525 ))
+    else
+        BRIGHTNESS=$(light -G)
+    fi
+    echo "$BRIGHTNESS"
+}
+
+# Get the icon based on brightness level
+get_icon() {
+    current_brightness=$(get_brightness)
+    if ((current_brightness >= 0 && current_brightness <= 20)); then
+        icon="${ICON_DIR}brightness-20.png"
+    elif ((current_brightness > 20 && current_brightness <= 40)); then
+        icon="${ICON_DIR}brightness-40.png"
+    elif ((current_brightness > 40 && current_brightness <= 60)); then
+        icon="${ICON_DIR}brightness-60.png"
+    elif ((current_brightness > 60 && current_brightness <= 80)); then
+        icon="${ICON_DIR}brightness-80.png"
+    else
+        icon="${ICON_DIR}brightness-100.png"
+    fi
+    echo "$icon"
+}
+
+# Send a notification with Dunst
+send_notification() {
+    icon=$(get_icon)
+    brightness=$(get_brightness)
+    dunstify -u low -h string:x-dunst-stack-tag:obbacklight -i "$icon" "Brightness: $brightness%"
+}
+
+# Increase brightness
+increase_brightness() {
+    if [[ "$CARD" == *"intel_"* ]]; then
+        brightnessctl --device='intel_backlight' set +10%
+    else
+        light -A 5
+    fi
+    send_notification
+}
+
+# Decrease brightness
+decrease_brightness() {
+    if [[ "$CARD" == *"intel_"* ]]; then
+        brightnessctl --device='intel_backlight' set 10%-
+    else
+        light -U 5
+    fi
+    send_notification
+}
+
+# Main function
+main() {
+    check_dependencies
+
+    case "$1" in
+        "--get")
+            get_brightness
+            ;;
+        "--inc")
+            increase_brightness
+            ;;
+        "--dec")
+            decrease_brightness
+            ;;
+        *)
+            get_brightness
+            ;;
+    esac
+}
+
+# Run the script
+main "$@"
