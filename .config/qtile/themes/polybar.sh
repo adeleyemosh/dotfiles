@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2023 [Github] <https://github.com/adeleyemosh>
+#  __  __  ____   _____ _    _
+# |  \/  |/ __ \ / ____| |  | |
+# | \  / | |  | | (___ | |__| |
+# | |\/| | |  | |\___ \|  __  |
+# | |  | | |__| |____) | |  | |
+# |_|  |_|\____/|_____/|_|  |_|
 
 ## Files and Directories
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 SFILE="$DIR/system.ini"
 RFILE="$DIR/.system"
-STYLE="darkred"
+STYLE="amaterasu"
 
 ## Get system variable values for various modules
 get_values() {

@@ -11,7 +11,6 @@
 import os
 from libqtile import layout
 from libqtile.config import Match
-from .theme import colors_config
 
 ## Layouts ------------------------------
 active_section_color = '#E23E57'

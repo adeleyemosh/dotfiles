@@ -13,7 +13,7 @@ from libqtile.log_utils import logger
 
 ## Screens ------------------------------
 
-top_gap = 43
+top_gap = 5
 bottom_gap = 5
 left_gap = 5
 right_gap = 5

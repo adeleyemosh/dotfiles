@@ -18,7 +18,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-STYLE="darkred"
+STYLE="amaterasu"
 RASI="$DIR/themes/$STYLE/rofi/bluetooth.rasi"
 
 # Constants
