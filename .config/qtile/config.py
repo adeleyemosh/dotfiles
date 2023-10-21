@@ -7,8 +7,6 @@
 # | |  | | |__| |____) | |  | |
 # |_|  |_|\____/|_____/|_|  |_|
 
-from libqtile import hook
-
 from modules.keys import mod, keys
 from modules.groups import groups
 from modules.layouts import layouts, floating_layout
@@ -16,14 +14,6 @@ from modules.mouse import mouse
 from modules.screens import screens
 from modules.hooks import *
 
-import os
-import subprocess
-
-# Startup ------------------------------
-# @hook.subscribe.startup_once
-# def autostart():
-#     home = os.path.expanduser('~')
-#     subprocess.Popen([home + '/.config/qtile/scripts/qtile_autostart'])
 
 # Default settings for bar widgets.
 widget_defaults = dict(
@@ -32,7 +22,7 @@ widget_defaults = dict(
     padding=5,
 )
 
-## General Configuration Variables ------------------------------
+## General Configuration Variables 
 auto_fullscreen = True
 bring_front_click = False
 cursor_warp = False

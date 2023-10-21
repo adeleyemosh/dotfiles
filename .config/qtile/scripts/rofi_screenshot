@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-STYLE="darkred"
+STYLE="amaterasu"
 RASI="$DIR/themes/$STYLE/rofi/screenshot.rasi"
 
 # Theme Elements

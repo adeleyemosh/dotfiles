@@ -1,8 +1,22 @@
+## Copyright (C) 2023 [Github] <https://github.com/adeleyemosh>
+
+#  __  __  ____   _____ _    _
+# |  \/  |/ __ \ / ____| |  | |
+# | \  / | |  | | (___ | |__| |
+# | |\/| | |  | |\___ \|  __  |
+# | |  | | |__| |____) | |  | |
+# |_|  |_|\____/|_____/|_|  |_|
+
+
 from libqtile import hook
 import subprocess
 import os
 
 from .layouts import floating_types
+
+# --------------------------------------------------------
+# Hooks
+# --------------------------------------------------------
 
 @hook.subscribe.startup_once
 def autostart():

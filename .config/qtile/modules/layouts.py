@@ -8,34 +8,37 @@
 # |_|  |_|\____/|_____/|_|  |_|
 
 ## Layouts
-import os
 from libqtile import layout
 from libqtile.config import Match
+from .colors import *
 
 ## Layouts ------------------------------
-active_section_color = '#E23E57'
-normal_section_color = '#18232c'
-border_width_var = 2
+colors = hidan
+
 margin_var = [5,5,5,5]
 
-layout_conf = {
-    'border_focus': active_section_color,
-    'border_normal':normal_section_color,
-    'border_width': border_width_var,
-}
+def init_layout_theme():
+    theme = {
+        # "margin": 20,
+        "border_width": 3,
+        "border_focus": colors[8][0], 
+        "border_normal": colors[0][0], 
+        "single_border_width": 3
+    }
+    return theme
+
+layout_conf = init_layout_theme()
 
 layouts = [
 	# This layout divides the screen into a matrix of equally sized cells and places one window in each cell.
     layout.Matrix(
         **layout_conf,
 		columns=2,
-		margin=margin_var
     ),
 
 	# Maximized layout
     layout.Max(
 		**layout_conf,
-		margin=0
     ),
 
 	# Emulate the behavior of XMonad's default tiling scheme.
@@ -44,13 +47,11 @@ layouts = [
 		align=0,
 		change_ratio=0.05,
 		change_size=20,
-		margin=0,
 		max_ratio=0.75,
 		min_ratio=0.25,
 		min_secondary_size=85,
 		new_client_position='after_current',
 		ratio=0.5,
-		single_border_width=None,
 		single_margin=None
     ),
 
@@ -61,13 +62,11 @@ layouts = [
 		change_ratio=0.05,
 		change_size=20,
 		main_centered=True,
-		margin=0,
 		max_ratio=0.75,
 		min_ratio=0.25,
 		min_secondary_size=85,
 		new_client_position='top',
 		ratio=0.5,
-		single_border_width=None,
 		single_margin=None
     ),
 
@@ -77,13 +76,11 @@ layouts = [
 		align=0,
 		change_ratio=0.05,
 		change_size=20,
-		margin=0,
 		max_ratio=0.75,
 		min_ratio=0.25,
 		min_secondary_size=85,
 		new_client_position='after_current',
 		ratio=0.5,
-		single_border_width=None,
 		single_margin=None
     ),
 
@@ -122,6 +119,10 @@ layouts = [
 	)
 ]
 
+# --------------------------------------------------------
+# Define floating layouts
+# --------------------------------------------------------
+
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 # The default floating layout to use. This allows you to set custom floating rules among other things if you wish.
 floating_layout = layout.Floating(
@@ -148,5 +149,5 @@ floating_layout = layout.Floating(
         Match(wm_class="error"),
         Match(wm_class="dialog"),
     ],
-    border_focus=active_section_color
+    border_focus=colors[8][0]
 )
