@@ -1,6 +1,12 @@
 #!/bin/bash
 
 ## Copyright (C) 2023 [Github] <https://github.com/adeleyemosh>
+#  __  __  ____   _____ _    _
+# |  \/  |/ __ \ / ____| |  | |
+# | \  / | |  | | (___ | |__| |
+# | |\/| | |  | |\___ \|  __  |
+# | |  | | |__| |____) | |  | |
+# |_|  |_|\____/|_____/|_|  |_|
 ##
 ## Autostart Programs
 
@@ -53,14 +59,9 @@ xsetroot -cursor_name left_ptr
 # Launch compositor
 "$qdir/scripts/qtile_comp" &
 
-# Start mpd
+# Launch whatsapp
+"$qdir/scripts/launch-whatsapp.sh" &
+
+# Start
 exec variety &
 exec barrier &
-
-
-#  __  __  ____   _____ _    _
-# |  \/  |/ __ \ / ____| |  | |
-# | \  / | |  | | (___ | |__| |
-# | |\/| | |  | |\___ \|  __  |
-# | |  | | |__| |____) | |  | |
-# |_|  |_|\____/|_____/|_|  |_|

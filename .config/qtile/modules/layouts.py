@@ -122,6 +122,7 @@ layouts = [
 	)
 ]
 
+floating_types = ["notification", "toolbar", "splash", "dialog"]
 # The default floating layout to use. This allows you to set custom floating rules among other things if you wish.
 floating_layout = layout.Floating(
 	# **layout_conf,
@@ -137,6 +138,15 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),
         Match(title="barrier"),
         Match(wm_class="flameshot"),
+        Match(wm_class="Arandr"),
+        Match(wm_class="download"),
+        Match(wm_class="xfce4-terminal"),
+        Match(wm_class="toolbar"),
+        Match(wm_class="confirm"),
+        Match(wm_class="splash"),
+        Match(wm_class="file_progress"),
+        Match(wm_class="error"),
+        Match(wm_class="dialog"),
     ],
     border_focus=active_section_color
 )
