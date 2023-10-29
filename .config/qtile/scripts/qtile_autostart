@@ -29,6 +29,9 @@ xrandr --output eDP-1 --primary --mode 3200x1800 --pos 0x0 --rotate normal
 # Start conky for system overview
 (conky -c "$qdir/scripts/system-overview") &
 
+# Start gnome-polkit if not running
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # Launch xsettingsd daemon
 xsettingsd --config="$qdir/xsettingsd" &
 
@@ -60,8 +63,9 @@ xsetroot -cursor_name left_ptr
 "$qdir/scripts/qtile_comp" &
 
 # Launch whatsapp
-"$qdir/scripts/launch-whatsapp.sh" &
+# "$qdir/scripts/launch-whatsapp.sh" &
 
 # Start
 exec variety &
 exec barrier &
+exec kdeconnect &

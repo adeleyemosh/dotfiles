@@ -148,6 +148,7 @@ floating_layout = layout.Floating(
         Match(wm_class="file_progress"),
         Match(wm_class="error"),
         Match(wm_class="dialog"),
+        Match(wm_class="kdeconnect-app"),
     ],
     border_focus=colors[8][0]
 )
