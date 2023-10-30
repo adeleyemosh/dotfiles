@@ -1,6 +1,12 @@
 ###
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/opt/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$ANDROID_HOME/cmdline-tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
