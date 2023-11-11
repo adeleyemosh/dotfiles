@@ -51,7 +51,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-"$qdir/themes/wallpaper.sh"
+"$qdir/themes/wallpaper.sh" &
 
 # Launch notification daemon
 "$qdir/scripts/qtile_dunst" &
@@ -63,9 +63,11 @@ xsetroot -cursor_name left_ptr
 "$qdir/scripts/qtile_comp" &
 
 # Launch whatsapp
-# "$qdir/scripts/launch-whatsapp.sh" &
+"$qdir/scripts/launch-whatsapp.sh" &
+
+# Launch barrier
+"$qdir/scripts/launch-barrier.sh" &
 
 # Start
 exec variety &
-exec barrier &
 exec kdeconnect &
