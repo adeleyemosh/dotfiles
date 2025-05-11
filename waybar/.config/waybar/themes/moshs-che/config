@@ -30,6 +30,35 @@
     "format": ""
   },
   
+  "hyprland/window": {
+    "exec": "~/dotfiles/waybar/.config/waybar/window_title.sh",
+    "interval": 1,
+    "format": "{}"
+  },
+  
+  "hyprland/workspaces": {
+  "all-outputs": true,
+  "active-only": false,
+  "on-click": "activate",
+  "format": "{icon}",
+  "on-scroll-up": "hyprctl dispatch workspace e+1",
+  "on-scroll-down": "hyprctl dispatch workspace e-1",
+  "format-icons": {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "󰒱",
+    "7": "",
+    "8": "󰗃",
+    "9": "",
+    "active": "",
+    "urgent": "",
+    "default": ""
+  }
+},
+  
   "custom/window": {
     "exec": "~/dotfiles/waybar/.config/waybar/window_title.sh",
     "interval": 1,
