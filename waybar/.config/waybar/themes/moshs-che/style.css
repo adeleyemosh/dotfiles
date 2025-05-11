@@ -1,0 +1,113 @@
+@import "mocha.css";
+
+* {
+  font-family: "MesloLGS Nerd Font Mono Bold";
+  font-size: 14px;
+  min-height: 0;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: rgba(17, 17, 27, 0.6);
+  color: @text;
+  border-radius: 8px;
+  margin: 4px 6px;
+  padding: 2px;
+}
+
+#workspaces button {
+  padding: 0 6px;
+  margin: 0 4px;
+  border-radius: 4px;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: @mauve;
+  border: 1px solid @mauve;
+}
+
+/* Fix: comma-separated list */
+#bluetooth,
+#network,
+#pulseaudio,
+#battery,
+#clock,
+#backlight,
+#custom-updates,
+#custom-notification,
+#custom-power,
+#cpu,
+#memory,
+#tray {
+  padding: 4px 10px;
+  margin: 2px 6px;
+  border-radius: 6px;
+  background-color: rgba(49, 50, 68, 0.5);
+}
+
+/* Custom colored borders */
+#bluetooth {
+  color: @green;
+  border: 2px solid @green;
+}
+
+#network {
+  color: @peach;
+  border: 2px solid @peach;
+}
+
+#pulseaudio {
+  color: @blue;
+  border: 2px solid @blue;
+}
+
+#battery {
+  color: @green;
+  border: 2px solid @green;
+}
+
+#clock {
+  color: @maroon;
+  border: 2px solid @maroon;
+}
+
+#clock.simpleclock {
+  color: #89b4fa;
+  border: 2px solid @#89b4fa;
+}
+
+#backlight {
+  color: @yellow;
+  border: 2px solid @yellow;
+}
+
+#custom-updates {
+  color: @lavender;
+  border: 2px solid @lavender;
+}
+
+#custom-notification {
+  color: @sky;
+  border: 2px solid @sky;
+}
+
+#cpu {
+  color: @sky;
+  border: 2px solid @sky;
+}
+
+#memory {
+  color: @sky;
+  border: 2px solid @sky;
+}
+
+#tray {
+  border: 2px solid @mauve;
+}
+
+#custom-power {
+  color: #f38ba8;
+  border: 2px solid @#f38ba8;
+}
