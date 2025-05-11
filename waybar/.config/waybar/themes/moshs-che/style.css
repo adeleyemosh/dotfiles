@@ -8,22 +8,42 @@
 }
 
 window#waybar {
+  background: transparent;
+}
+
+#workspaces  {
   background-color: rgba(17, 17, 27, 0.6);
   color: @text;
   border-radius: 8px;
-  margin-top: 5px;
-  margin-left: 0;
-  margin-right: 15;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 4px 10px;
+  margin: 5px 6px;
+  font-size: 20px;
+  color: @teal;
+  border: 2px solid @teal;
+}
+
+#custom-arch {
+  background-color: rgba(17, 17, 27, 0.6);
+  color: @text;
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 5px 6px;
+  font-size: 20px;
+  color: @flamingo;
+  border: 2px solid @flamingo;
 }
 
 .modules-left {
-  margin-left: 16px;
+  margin-left: 15px;
 }
 
 .modules-right {
-  margin-right: 16px;
+  margin-right: 15px;
+}
+
+#custom-arch {
+  font-size: 20px;
+  margin-left: 15px;
 }
 
 #workspaces button {
@@ -33,10 +53,34 @@ window#waybar {
   background: transparent;
 }
 
+#workspaces button.active {
+  color: #2ac3de;
+}
+
 #workspaces button.focused {
   background-color: rgba(255, 255, 255, 0.1);
   color: @mauve;
   border: 1px solid @mauve;
+}
+
+#window {
+  font-weight: bold;
+  color: @pink;
+  background-color: rgba(49, 50, 68, 0.3);
+  border: 2px solid @pink;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 5px 6px;
+}
+
+#custom-window {
+  font-weight: bold;
+  color: @pink;
+  background-color: rgba(49, 50, 68, 0.3);
+  border: 2px solid @pink;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 5px 6px;
 }
 
 #bluetooth,
@@ -52,7 +96,7 @@ window#waybar {
 #memory,
 #tray {
   padding: 4px 10px;
-  margin: 2px 6px;
+  margin: 5px 6px;
   border-radius: 6px;
   background-color: rgba(49, 50, 68, 0.5);
 }

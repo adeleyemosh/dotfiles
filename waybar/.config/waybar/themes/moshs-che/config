@@ -2,8 +2,13 @@
   "position": "top",
   
   "modules-left": [
+	"custom/arch", 
     "hyprland/workspaces",
     "hyprland/window"
+  ],
+  
+  "modules-center": [
+	"custom/window"
   ],
   
   "modules-right": [
@@ -20,6 +25,16 @@
     "tray",
     "custom/power"
   ],
+  
+  "custom/arch": {
+    "format": ""
+  },
+  
+  "custom/window": {
+    "exec": "~/dotfiles/waybar/.config/waybar/window_title.sh",
+    "interval": 1,
+    "format": "{}"
+  },
   
   "clock": {
     "format": " {:L%a %d %b}",
