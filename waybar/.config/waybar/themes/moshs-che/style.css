@@ -15,8 +15,8 @@ window#waybar {
   background-color: rgba(49, 50, 68, 0.5);
   color: @text;
   border-radius: 8px;
-  padding: 4px 10px;
-  margin: 5px 6px;
+  padding: 4px 5px;
+  margin: 5px 4px;
   font-size: 20px;
   color: @teal;
   border: 2px solid @teal;
@@ -178,45 +178,36 @@ window#waybar {
 
 #workspaces button:nth-child(1) label {
   color: #8aadf4;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(2) label {
   color: #ed8796;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(3) label {
   color: #a6da95;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(4) label {
   color: #c6a0f6;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(5) label {
   color: #f4dbd6;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(6) label {
   color: #f5a97f;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(7) label {
   color: #8bd5ca;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(8) label {
   color: #68b0d6;
-  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(9) label {
   color: #aab1d3;
-  margin: 0px 8px;
 }
