@@ -13,6 +13,18 @@ window#waybar {
   border-radius: 8px;
   margin: 4px 6px;
   padding: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modules-left {
+  margin-left: 16px;
+}
+
+.modules-right {
+  margin-right: 16px;
 }
 
 #workspaces button {
@@ -98,8 +110,8 @@ window#waybar {
 }
 
 #memory {
-  color: @sky;
-  border: 2px solid @sky;
+  color: @rosewater;
+  border: 2px solid @rosewater;
 }
 
 #tray {
