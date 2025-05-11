@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-  font-family: "MesloLGS Nerd Font Mono Bold";
+  font-family: Lexend, "JetBrainsMono NFP", "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif, "MesloLGS Nerd Font Mono Bold";
   font-size: 14px;
   min-height: 0;
   font-weight: bold;
@@ -28,7 +28,6 @@ window#waybar {
   border: 1px solid @mauve;
 }
 
-/* Fix: comma-separated list */
 #bluetooth,
 #network,
 #pulseaudio,
@@ -74,8 +73,8 @@ window#waybar {
 }
 
 #clock.simpleclock {
-  color: #89b4fa;
-  border: 2px solid @#89b4fa;
+  color: @babyblue;
+  border: 2px solid @babyblue;
 }
 
 #backlight {
@@ -108,6 +107,6 @@ window#waybar {
 }
 
 #custom-power {
-  color: #f38ba8;
-  border: 2px solid @#f38ba8;
+  color: @softred;
+  border: 2px solid @softred;
 }
