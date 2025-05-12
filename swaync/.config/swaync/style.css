@@ -1,48 +1,54 @@
-/* Colors */
+@import url("mocha.css");
 
-@import 'colors.css';
-@define-color background @background;
-@define-color groupbackground @background;
-@define-color buttoncolor @secondary;
-@define-color bordercolor @primary;
-@define-color fontcolor @on_surface;
+/* Define visual variables */
+@define-color background @base;
+@define-color groupbackground @mantle;
+@define-color buttoncolor @surface0;
+@define-color bordercolor @blue;
+@define-color fontcolor @text;
+@define-color on_secondary #ffffff;
 
 * {
     font-family: "Fira Sans Semibold";
 }
 
 /* Control Center */
-
 .control-center {
-    border: 3px solid @bordercolor;
+    border: 2px solid @bordercolor;
+    border-radius: 12px;
+    background-color: @groupbackground;
     padding: 10px;
 }
 
 button {
     border: 0px;
     min-width: 35px;
+    border-radius: 8px;
     background: @buttoncolor;
     color: @on_secondary;
 }
 
 .notification-group-header {
     font-size: 14px;
+    color: @fontcolor;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-    margin:5px;
+    margin: 5px;
 }
 
 /* Notification */
-
 .notification {
-    border: 3px solid @bordercolor;
-	border-radius: 10px;
-    padding:10px;
+    border: 2px solid @bordercolor;
+    border-radius: 12px;
+    background-color: @background;
+    color: @fontcolor;
+    padding: 12px;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
-    color: #ffffff;
-    background: transparent;
+    color: @on_secondary;
+    background: @surface2;
+    border-radius: 6px;
 }
