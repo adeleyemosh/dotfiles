@@ -1,0 +1,9 @@
+[Unit]
+Description=Play sound when charger is plugged/unplugged
+
+[Service]
+ExecStart=%h/.local/bin/power-audio-watcher.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
