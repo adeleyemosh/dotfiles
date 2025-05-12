@@ -22,3 +22,5 @@ else
 fi
 
 notify-send "$STATE" "${VOLUME}% volume" -u normal -i "$ICON" -t 4000 -r 9992
+
+paplay /usr/share/sounds/freedesktop/stereo/bell.oga &
