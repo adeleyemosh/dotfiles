@@ -1,0 +1,15 @@
+/* Import mocha colors */
+@import '../ml4w-modern/mocha.css';
+
+/* Define style colors using mocha values */
+@define-color backgroundlight @surface0;
+@define-color backgrounddark @mantle;
+@define-color workspacesbackground1 @surface1;
+@define-color workspacesbackground2 @base;
+@define-color bordercolor @mauve;
+@define-color textcolor1 @text;
+@define-color textcolor2 @subtext1;
+@define-color textcolor3 @subtext0;
+@define-color iconcolor @lavender;
+
+@import '../ml4w-modern/style.css';
