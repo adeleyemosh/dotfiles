@@ -7,10 +7,6 @@
     "hyprland/window"
   ],
   
-  "modules-center": [
-	"custom/window"
-  ],
-  
   "modules-right": [
 	"custom/updates",
 	"cpu",
@@ -31,33 +27,97 @@
   },
   
   "hyprland/window": {
-    "exec": "~/dotfiles/waybar/.config/waybar/window_title.sh",
-    "interval": 1,
-    "format": "{}"
-  },
+            "format": "  {}",
+            "rotate": 0,
+            "separate-outputs": true,
+            "rewrite": {
+                "khing@archlinux:(.*)": "$1 ",
+                "(.*) — Mozilla Firefox": "$1 󰈹",
+                "(.*)Mozilla Firefox": "Firefox 󰈹",
+                "(.*) - Visual Studio Code": "$1 󰨞",
+                "(.*)Visual Studio Code": "Code 󰨞",
+                "(.*) - Code - OSS": "$1 󰨞",
+                "(.*)Code - OSS": "Code 󰨞",
+                "(.*) — Dolphin": "$1 󰉋",
+                "(.*)Spotify": "Spotify 󰓇",
+                "(.*)Steam": "Steam 󰓓",
+                "(.*) - Discord": "$1  ",
+                "(.*)Netflix": "Netflix 󰝆 ",
+                "(.*) — Google chrome": "$1  ",
+                "(.*)Google chrome": "Google chrome  ",
+                "(.*) — Github": "$1  ",
+                "(.*)Github": "Github ",
+                "(.*)Spotify Free": "Spotify 󰓇",
+                "(.*)Spotify Premiun": "Spotify 󰓇",
+                "(.*)kitty(.*)": "Kitty ",
+				  "(.*)alacritty(.*)": "Alacritty ",
+				  "(.*)Geany": "Geany 󰖯",
+				  "(.*)neovim(.*)": "Neovim ",
+				  "(.*)code(.*)": "Code 󰨞",
+				  "(.*)Visual Studio Code(.*)": "Code 󰨞",
+				  "(.*)Zen Browser(.*)": "Zen Browser 󰈹",
+				  "(.*)google-chrome(.*)": "Chrome ",
+				  "(.*)brave(.*)": "Brave ",
+				  "(.*)chromium(.*)": "Chromium ",
+				  "(.*)discord(.*)": "Discord ",
+				  "(.*)Telegram.*": "Telegram ",
+				  "(.*)Spotify(.*)": "Spotify 󰓇",
+				  "(.*)obsidian(.*)": "Obsidian ",
+				  "(.*)steam(.*)": "Steam 󰓓",
+				  "(.*)dbeaver(.*)": "DBeaver 🐬",
+				  "(.*)onlyoffice(.*)": "OnlyOffice 󰈬",
+				  "(.*)libreoffice(.*)": "LibreOffice ",
+				  "(.*)wps-office(.*)": "WPS ",
+				  "(.*)nautilus(.*)": "Files ",
+				  "(.*)nemo(.*)": "Files ",
+				  "(.*)gwenview(.*)": "Images ",
+				  "(.*)gimp(.*)": "GIMP ",
+				  "(.*)pinta(.*)": "Pinta ",
+				  "(.*)virt-manager(.*)": "VM 󰢹",
+				  "(.*)qemu(.*)": "QEMU 󰢹",
+				  "(.*)virt-viewer(.*)": "VM Viewer 󰢹",
+				  "(.*)azuredatastudio(.*)": "Azure ",
+				  "(.*)android-studio(.*)": "Android ",
+				  "(.*)scrcpy(.*)": "scrcpy ",
+				  "(.*)ranger(.*)": "Ranger ",
+				  "(.*)octopi(.*)": "Octopi ",
+				  "(.*)stacer(.*)": "Stacer ",
+				  "(.*)mission-center(.*)": "Monitor 󰍛",
+				  "(.*)helix(.*)": "Helix ",
+				  "(.*)htop(.*)": "HTop ",
+				  "(.*)btop(.*)": "BTop ",
+				  "(.*)bpytop(.*)": "BPytop ",
+				  "(.*)windsurf.*": "Windsurf ",
+				  "(.*)cachy-browser.*": "Cachy ",
+				  "(.*)waypaper.*": "Wallpaper ",
+				  "(.*)filezilla.*": "FileZilla 󰗶",
+				  "(.*)meld.*": "Meld 󰑓"
+            },
+            "max-length": 50
+        },
   
   "hyprland/workspaces": {
-  "all-outputs": true,
-  "active-only": false,
-  "on-click": "activate",
-  "format": "{icon}",
-  "on-scroll-up": "hyprctl dispatch workspace e+1",
-  "on-scroll-down": "hyprctl dispatch workspace e-1",
-  "format-icons": {
-	  "1": "₁",
-	  "2": "₂",
-	  "3": "₃",
-	  "4": "₄",
-	  "5": "₅",
-	  "6": "󰒱₆",
-	  "7": "₇",
-	  "8": "󰗃₈",
-	  "9": "₉",
-	  "active": "",
-	  "urgent": "",
-	  "default": ""
-	}
-},
+	  "all-outputs": true,
+	  "active-only": false,
+	  "on-click": "activate",
+	  "format": "{icon}",
+	  "on-scroll-up": "hyprctl dispatch workspace e+1",
+	  "on-scroll-down": "hyprctl dispatch workspace e-1",
+	  "format-icons": {
+		  "1": "₁",
+		  "2": "₂",
+		  "3": "₃",
+		  "4": "₄",
+		  "5": "₅",
+		  "6": "󰒱₆",
+		  "7": "₇",
+		  "8": "󰗃₈",
+		  "9": "₉",
+		  "active": "",
+		  "urgent": "",
+		  "default": ""
+		}
+	},
   
   "custom/window": {
     "exec": "~/dotfiles/waybar/.config/waybar/window_title.sh",
@@ -142,7 +202,7 @@
     },
     "on-click": "pavucontrol"
   },
-  
+	
   "bluetooth": {
     "format": " {status}",
     "format-disabled": "",
