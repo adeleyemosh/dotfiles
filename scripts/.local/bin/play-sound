@@ -1,3 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
-paplay /usr/share/sounds/freedesktop/stereo/bell.oga 
+case "$1" in
+    charging)
+        paplay /usr/share/sounds/freedesktop/stereo/message.oga
+        ;;
+    discharging)
+        paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga
+        ;;
+    *)
+        paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
+        ;;
+esac
