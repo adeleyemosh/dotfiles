@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "../../mocha.css";
 
 * {
   font-family: Lexend, "JetBrainsMono NFP", "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif, "MesloLGS Nerd Font Mono Bold";
@@ -103,6 +103,7 @@ window#waybar {
 #custom-power,
 #cpu,
 #memory,
+#custom-notification,
 #tray {
   padding: 4px 10px;
   margin: 5px 6px;
@@ -164,6 +165,14 @@ window#waybar {
 #memory {
   color: @rosewater;
   border: 2px solid @rosewater;
+}
+
+/* -----------------------------------------------------
+ * Custom Notification
+ * ----------------------------------------------------- */
+
+ #custom-notification {
+    border: 2px solid @pastel-coral;
 }
 
 #tray {

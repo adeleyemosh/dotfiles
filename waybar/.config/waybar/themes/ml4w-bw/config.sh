@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="ML4W Colored"
+theme_name="ML4W Black/White"

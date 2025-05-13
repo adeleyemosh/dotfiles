@@ -26,3 +26,23 @@
 @define-color crust #11111b;
 @define-color babyblue #89b4fa;
 @define-color softred #f38ba8;
+
+@define-color pastel-aqua #a8edea;
+@define-color pastel-mint #d2f8d2;
+@define-color pastel-orange #ffd6a5;
+@define-color pastel-yellow #fdfd96;
+@define-color pastel-lilac #e0bbf9;
+@define-color pastel-blue #bcd4e6;
+@define-color pastel-green #c1fba4;
+@define-color pastel-pink #ffb7ce;
+@define-color pastel-coral #ffb5a7;
+@define-color pastel-cyan #a0e7e5;
+@define-color pastel-violet #cfbaf0;
+@define-color pastel-beige #f5f5dc;
+@define-color pastel-rose #f6c1c7;
+@define-color pastel-salmon #ffc9b9;
+@define-color pastel-sky #caf0f8;
+@define-color pastel-ivory #fffff0;
+@define-color pastel-grape #dcd6f7;
+@define-color pastel-butter #fff5ba;
+@define-color pastel-mocha #d8c3a5;
