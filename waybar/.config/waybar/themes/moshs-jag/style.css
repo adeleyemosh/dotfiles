@@ -1,3 +1,5 @@
+@import '../../assets/colour-bank.css';
+
 * {
   min-height: 0;
   min-width: 0;
@@ -9,30 +11,30 @@
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
-  background-color: #11111b;
+  background-color: @bg-main;
 }
 
 #workspaces button {
   padding: 0.3rem 0.6rem;
   margin: 0.4rem 0.25rem;
   border-radius: 6px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+  background-color: @bg-secondary;
+  color: @fg-default;
 }
 
 #workspaces button:hover {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: @bg-secondary;
+  background-color: @fg-default;
 }
 
 #workspaces button.active {
-  background-color: #1e1e2e;
-  color: #89b4fa;
+  background-color: @bg-secondary;
+  color: @fg-accent;
 }
 
 #workspaces button.urgent {
-  background-color: #1e1e2e;
-  color: #f38ba8;
+  background-color: @bg-secondary;
+  color: @fg-urgent;
 }
 
 #clock,
@@ -48,97 +50,56 @@ window#waybar {
 #mpris,
 #network,
 #battery.bat2,
-#custom-updates {
+#custom-updates,
+#backlight,
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
   padding: 0.3rem 0.6rem;
   margin: 0.4rem 0.25rem;
   border-radius: 6px;
-  background-color: #1e1e2e;
+  background-color: @bg-secondary;
+  color: @fg-default;
 }
 
-#mpris.playing {
-  color: #a6e3a1;
-}
-
-#mpris.paused {
-  color: #9399b2;
-}
-
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
-}
-
-window#waybar.empty #window {
+#bluetooth.off {
   background-color: transparent;
+  padding: 0px;
+  margin: 0px;
 }
 
-#cpu {
-  color: #94e2d5;
-}
+#mpris.playing { color: @fg-mpris-play; }
+#mpris.paused  { color: @fg-mpris-pause; }
 
-#memory {
-  color: #cba6f7;
-}
+#custom-sep { padding: 0px; color: @fg-muted; }
 
-#clock {
-  color: #74c7ec;
-}
+window#waybar.empty #window { background-color: transparent; }
 
-#clock.simpleclock {
-  color: #89b4fa;
-}
+#cpu     { color: @fg-cpu; }
+#memory  { color: @fg-memory; }
+#clock   { color: @fg-info; }
+#clock.simpleclock { color: @fg-accent; }
+#window  { color: @fg-default; }
 
-#window {
-  color: #cdd6f4;
-}
+#pulseaudio        { color: @fg-note; }
+#pulseaudio.muted  { color: @fg-pulse-muted; }
 
-#pulseaudio {
-  color: #b4befe;
-}
+#custom-logo  { color: @fg-accent; }
+#custom-power { color: @fg-danger; }
 
-#pulseaudio.muted {
-  color: #a6adc8;
-}
-
-#custom-logo {
-  color: #89b4fa;
-}
-
-#custom-power {
-  color: #f38ba8;
-}
-
-/* NETWORK Specifics */
-#network {
-  color: #cdd6f4;
-}
-
+#network,
 #network.ethernet,
-#network.wifi {
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
+#network.wifi       { color: @fg-default; }
+#network.disconnected { color: @fg-danger; }
 
-#network.disconnected {
-  background-color: #1e1e2e;
-  color: #f38ba8;
-}
-
-/* BATTERY Specifics */
-#battery.bat2 {
-  color: #cdd6f4;
-}
-
+#battery.bat2    { color: @fg-default; }
 #battery.charging,
-#battery.plugged {
-  color: #a6e3a1;
-}
+#battery.plugged { color: @fg-good; }
 
-/* Critical Battery Blinking */
 @keyframes blink {
   to {
-    background-color: #f38ba8;
-    color: #11111b;
+    background-color: @fg-warn;
+    color: @bg-main;
   }
 }
 
@@ -150,44 +111,9 @@ window#waybar.empty #window {
   animation-direction: alternate;
 }
 
-/* UPDATES Specifics */
-#custom-updates {
-  color: #cdd6f4;
-}
+#custom-updates { color: @fg-default; }
 
-/* -----------------------------------------------------
- * Backlight
- * ----------------------------------------------------- */
-#backlight {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
-
-/* -----------------------------------------------------
- * Bluetooth
- * ----------------------------------------------------- */
-#bluetooth,
-#bluetooth.on,
-#bluetooth.connected {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
-
-#bluetooth.off {
-  background-color: transparent;
-  padding: 0px;
-  margin: 0px;
-}
-
-
-/* TOOLTIP */
 tooltip {
-  background-color: #181825;
-  border: 2px solid #89b4fa;
+  background-color: @bg-tooltip;
+  border: 2px solid @fg-tooltip;
 }
