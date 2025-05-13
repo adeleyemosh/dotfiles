@@ -40,14 +40,14 @@ window#waybar {
 #custom-logo,
 #custom-power,
 #custom-spotify,
-#custom-notification,
+#custom-notification2,
 #cpu,
 #tray,
 #memory,
 #window,
 #mpris,
 #network,
-#battery,
+#battery.bat2,
 #custom-updates {
   padding: 0.3rem 0.6rem;
   margin: 0.4rem 0.25rem;
@@ -125,7 +125,7 @@ window#waybar.empty #window {
 }
 
 /* BATTERY Specifics */
-#battery {
+#battery.bat2 {
   color: #cdd6f4;
 }
 
