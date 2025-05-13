@@ -94,6 +94,7 @@ window#waybar {
 
 #bluetooth,
 #network,
+#network.speed,
 #pulseaudio,
 #battery,
 #clock,
@@ -124,6 +125,11 @@ window#waybar {
 #network {
   color: @peach;
   border: 2px solid @peach;
+}
+
+#network.speed {
+  color: @pastel-mint;
+  border: 2px solid @pastel-mint;
 }
 
 #pulseaudio {

@@ -4,6 +4,7 @@
   "modules-left": [
 	"custom/arch", 
     "hyprland/workspaces",
+    "network#speed",
     "hyprland/window"
   ],
   
@@ -33,67 +34,67 @@
             "rotate": 0,
             "separate-outputs": true,
             "rewrite": {
-                "khing@archlinux:(.*)": "$1 ",
+                "mosh@black:(.*)": " $1",
                 "(.*) — Mozilla Firefox": "$1 󰈹",
-                "(.*)Mozilla Firefox": "Firefox 󰈹",
-                "(.*) - Visual Studio Code": "$1 󰨞",
-                "(.*)Visual Studio Code": "Code 󰨞",
-                "(.*) - Code - OSS": "$1 󰨞",
-                "(.*)Code - OSS": "Code 󰨞",
-                "(.*) — Dolphin": "$1 󰉋",
-                "(.*)Spotify": "Spotify 󰓇",
-                "(.*)Steam": "Steam 󰓓",
-                "(.*) - Discord": "$1  ",
-                "(.*)Netflix": "Netflix 󰝆 ",
+                "(.*)Mozilla Firefox": "󰈹 Firefox",
+                "(.*) - Visual Studio Code": "󰨞 $1",
+                "(.*)Visual Studio Code": "󰨞 Code",
+                "(.*) - Code - OSS": "󰨞 $1",
+                "(.*)Code - OSS": "󰨞 Code",
+                "(.*) — Dolphin": "󰉋 $1",
+                "(.*)Spotify": "󰓇 Spotify",
+                "(.*)Steam": "󰓓 Steam",
+                "(.*) - Discord": " $1 ",
+                "(.*)Netflix": "󰝆 Netflix",
                 "(.*) — Google chrome": "$1  ",
-                "(.*)Google chrome": "Google chrome  ",
+                "(.*)Google chrome": " Google chrome",
                 "(.*) — Github": "$1  ",
-                "(.*)Github": "Github ",
-                "(.*)Spotify Free": "Spotify 󰓇",
-                "(.*)Spotify Premiun": "Spotify 󰓇",
-                "(.*)kitty(.*)": "Kitty ",
-				  "(.*)alacritty(.*)": "Alacritty ",
-				  "(.*)Geany": "Geany 󰖯",
-				  "(.*)neovim(.*)": "Neovim ",
-				  "(.*)code(.*)": "Code 󰨞",
-				  "(.*)Visual Studio Code(.*)": "Code 󰨞",
-				  "(.*)Zen Browser(.*)": "Zen Browser 󰈹",
-				  "(.*)google-chrome(.*)": "Chrome ",
-				  "(.*)brave(.*)": "Brave ",
-				  "(.*)chromium(.*)": "Chromium ",
-				  "(.*)discord(.*)": "Discord ",
-				  "(.*)Telegram.*": "Telegram ",
-				  "(.*)Spotify(.*)": "Spotify 󰓇",
-				  "(.*)obsidian(.*)": "Obsidian ",
-				  "(.*)steam(.*)": "Steam 󰓓",
-				  "(.*)dbeaver(.*)": "DBeaver 🐬",
-				  "(.*)onlyoffice(.*)": "OnlyOffice 󰈬",
-				  "(.*)libreoffice(.*)": "LibreOffice ",
-				  "(.*)wps-office(.*)": "WPS ",
-				  "(.*)nautilus(.*)": "Files ",
-				  "(.*)nemo(.*)": "Files ",
-				  "(.*)gwenview(.*)": "Images ",
-				  "(.*)gimp(.*)": "GIMP ",
-				  "(.*)pinta(.*)": "Pinta ",
-				  "(.*)virt-manager(.*)": "VM 󰢹",
-				  "(.*)qemu(.*)": "QEMU 󰢹",
-				  "(.*)virt-viewer(.*)": "VM Viewer 󰢹",
-				  "(.*)azuredatastudio(.*)": "Azure ",
-				  "(.*)android-studio(.*)": "Android ",
-				  "(.*)scrcpy(.*)": "scrcpy ",
-				  "(.*)ranger(.*)": "Ranger ",
-				  "(.*)octopi(.*)": "Octopi ",
-				  "(.*)stacer(.*)": "Stacer ",
-				  "(.*)mission-center(.*)": "Monitor 󰍛",
-				  "(.*)helix(.*)": "Helix ",
-				  "(.*)htop(.*)": "HTop ",
-				  "(.*)btop(.*)": "BTop ",
-				  "(.*)bpytop(.*)": "BPytop ",
-				  "(.*)windsurf.*": "Windsurf ",
-				  "(.*)cachy-browser.*": "Cachy ",
-				  "(.*)waypaper.*": "Wallpaper ",
-				  "(.*)filezilla.*": "FileZilla 󰗶",
-				  "(.*)meld.*": "Meld 󰑓"
+                "(.*)Github": " Github",
+                "(.*)Spotify Free": "󰓇 Spotify",
+                "(.*)Spotify Premiun": "󰓇 Spotify",
+                "(.*)kitty(.*)": " Kitty",
+				  "(.*)alacritty(.*)": " Alacritty",
+				  "(.*)Geany": "󰖯 Geany",
+				  "(.*)neovim(.*)": " Neovim",
+				  "(.*)code(.*)": "󰨞 Code",
+				  "(.*)Visual Studio Code(.*)": "󰨞 Code",
+				  "(.*)Zen Browser(.*)": "󰈹 Zen Browser",
+				  "(.*)google-chrome(.*)": " Chrome",
+				  "(.*)brave(.*)": " Brave",
+				  "(.*)chromium(.*)": " Chromium",
+				  "(.*)discord(.*)": " Discord",
+				  "(.*)Telegram.*": " Telegram",
+				  "(.*)Spotify(.*)": "󰓇 Spotify",
+				  "(.*)obsidian(.*)": " Obsidian",
+				  "(.*)steam(.*)": "󰓓 Steam",
+				  "(.*)dbeaver(.*)": "🐬 DBeaver",
+				  "(.*)onlyoffice(.*)": "󰈬 OnlyOffice",
+				  "(.*)libreoffice(.*)": " LibreOffice",
+				  "(.*)wps-office(.*)": " WPS",
+				  "(.*)nautilus(.*)": " Files",
+				  "(.*)nemo(.*)": " Files",
+				  "(.*)gwenview(.*)": " Images",
+				  "(.*)gimp(.*)": " GIMP",
+				  "(.*)pinta(.*)": " Pinta",
+				  "(.*)virt-manager(.*)": "󰢹 VM",
+				  "(.*)qemu(.*)": "󰢹 QEMU",
+				  "(.*)virt-viewer(.*)": "󰢹 VM Viewer",
+				  "(.*)azuredatastudio(.*)": " Azure",
+				  "(.*)android-studio(.*)": " Android Stufio",
+				  "(.*)scrcpy(.*)": " scrcpy",
+				  "(.*)ranger(.*)": " Ranger",
+				  "(.*)octopi(.*)": " Octopi",
+				  "(.*)stacer(.*)": " Stacer",
+				  "(.*)mission-center(.*)": "󰍛 Monitor",
+				  "(.*)helix(.*)": " Helix",
+				  "(.*)htop(.*)": " HTop",
+				  "(.*)btop(.*)": " BTop",
+				  "(.*)bpytop(.*)": " BPytop",
+				  "(.*)windsurf.*": " Windsurf",
+				  "(.*)cachy-browser.*": " Cachy",
+				  "(.*)waypaper.*": " Wallpaper",
+				  "(.*)filezilla.*": "󰗶 FileZilla",
+				  "(.*)meld.*": "󰑓 Meld"
             },
             "max-length": 50
         },
@@ -151,23 +152,18 @@
   
   "battery": {
     "states": {
-      "warning": 30,
-      "critical": 15
+		"good": 95,
+		"warning": 30,
+		"critical": 20
     },
-    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
+    "format": "<span size='13000' foreground='#a6e3a1'>{icon}</span> {capacity}%",
     "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
     "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
     "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format": "{time}"
   },
   
@@ -185,77 +181,112 @@
     "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
   },
   
-  "cpu": {
-    "format": " {usage}%",
-    "tooltip": true,
-    "interval": 1
-  },
-
-  "memory": {
-    "format": " {used:0.1f}Gi"
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "  muted",
-    "format-icons": {
-      "headphone": "",
-      "default": [" ", " ", " "]
-    },
-    "on-click": "pavucontrol"
-  },
+	"network#speed": {
+		"interval": 1,
+		"format": "{ifname}",
+		"format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+		"format-ethernet": "󰌘  {bandwidthUpBytes}  {bandwidthDownBytes}",
+		"format-disconnected": "󰌙",
+		"tooltip-format": "{ipaddr}",
+		"format-linked": "󰈁 {ifname} (No IP)",
+		"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+		"tooltip-format-ethernet": "{ifname} 󰌘",
+		"tooltip-format-disconnected": "󰌙 Disconnected",
+		"min-length": 24,
+		"max-length": 24,
+		"format-icons": [
+			"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+		]
+	},
 	
-  "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "blueman-manager",
-    "format-no-controller": ""
-  },
+	"temperature": {
+		"interval": 10,
+		"tooltip": true,
+		"hwmon-path": [
+			"/sys/class/hwmon/hwmon1/temp1_input",
+			"/sys/class/thermal/thermal_zone0/temp"
+		],
+		//"thermal-zone": 0,
+		"critical-threshold": 82,
+		"format-critical": "{temperatureC}°C {icon}",
+		"format": "{temperatureC}°C {icon}",
+		"format-icons": [
+			"󰈸"
+		],
+		"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nvtop"
+	},
   
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
-    ],
-    "scroll-step": 1
-  },
-  
-  "custom/updates": {
-    "format": "  {}",
-    "escape": true,
-    "return-type": "json",
-    "exec": "~/.config/ml4w/scripts/updates.sh",
-    "interval": 1800,
-    "on-click": "~/.config/ml4w/settings/installupdates.sh",
-    "on-click-right": "~/.config/ml4w/settings/software.sh"
-  },
+	"cpu": {
+		"format": " {usage}%",
+		"tooltip": true,
+		"interval": 1
+	},
 
-  "custom/notification": {
-    "escape": true,
-    "exec": "swaync-client -swb",
-    "exec-if": "which swaync-client",
-    "format": "{icon}",
-    "format-icons": {
-      "none": "󰅺",
-      "notification": "󰡟"
-    },
-    "on-click": "sleep 0.1 && swaync-client -t -sw",
-    "return-type": "json",
-    "tooltip": false
-  },
+	"memory": {
+		"format": " {used:0.1f}Gi"
+	},
 
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10
-  },
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "  muted",
+		"format-icons": {
+		  "headphone": "",
+		  "default": [" ", " ", " "]
+		},
+		"on-click": "pavucontrol"
+	},
+	
+	"bluetooth": {
+		"format": " {status}",
+		"format-disabled": "",
+		"format-off": "",
+		"interval": 30,
+		"on-click": "blueman-manager",
+		"format-no-controller": ""
+	},
   
-  "custom/power": {
-    "tooltip": false,
-    "on-click": "wlogout -p layer-shell &",
-    "format": "⏻"
-  },
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": [
+		  "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+		],
+		"scroll-step": 1
+	},
+  
+	"custom/updates": {
+		"format": "  {}",
+		"escape": true,
+		"return-type": "json",
+		"exec": "~/.config/ml4w/scripts/updates.sh",
+		"interval": 1800,
+		"on-click": "~/.config/ml4w/settings/installupdates.sh",
+		"on-click-right": "~/.config/ml4w/settings/software.sh"
+	},
+
+	"custom/notification": {
+		"escape": true,
+		"exec": "swaync-client -swb",
+		"exec-if": "which swaync-client",
+		"format": "{icon}",
+		"format-icons": {
+			  "none": "󰅺",
+			  "notification": "󰡟"
+		},
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"return-type": "json",
+		"tooltip": false
+	},
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10
+	},
+  
+	"custom/power": {
+		"tooltip": false,
+		"on-click": "wlogout -p layer-shell &",
+		"format": "⏻"
+	},
   
   // SwayNC
   "custom/notification": {

@@ -7,35 +7,37 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 
 WARNING_LEVEL=20
 CRITICAL_LEVEL=5
-BATTERY_DISCHARGING=$(acpi -b | grep "Battery 0" | grep -c "Discharging")
-BATTERY_LEVEL=$(acpi -b | grep "Battery 0" | grep -P -o '[0-9]+(?=%)')
 
-FULL_FILE=/tmp/batteryfull
-EMPTY_FILE=/tmp/batteryempty
-CRITICAL_FILE=/tmp/batterycritical
+BATTERY_INFO=$(acpi -b)
+BATTERY_DISCHARGING=$(echo "$BATTERY_INFO" | grep -c "Discharging")
+BATTERY_LEVEL=$(echo "$BATTERY_INFO" | grep -P -o '[0-9]+(?=%)' | head -n1)
 
-# Reset previous flags if state changed
-if [ "$BATTERY_DISCHARGING" -eq 1 ] && [ -f $FULL_FILE ]; then
-    rm $FULL_FILE
+FULL_FILE="/tmp/batteryfull"
+EMPTY_FILE="/tmp/batteryempty"
+CRITICAL_FILE="/tmp/batterycritical"
+
+# Reset flags if state changed
+if [ "$BATTERY_DISCHARGING" -eq 1 ] && [ -f "$FULL_FILE" ]; then
+    rm -f "$FULL_FILE"
 elif [ "$BATTERY_DISCHARGING" -eq 0 ]; then
-    rm -f $EMPTY_FILE $CRITICAL_FILE
+    rm -f "$EMPTY_FILE" "$CRITICAL_FILE"
 fi
 
-# Fully charged and on AC
-if [ "$BATTERY_LEVEL" -gt 99 ] && [ "$BATTERY_DISCHARGING" -eq 0 ] && [ ! -f $FULL_FILE ]; then
-    notify-send "Battery Charged" "Battery is fully charged." -i battery -r 9991
-    paplay /usr/share/sounds/freedesktop/stereo/complete.oga &
-    touch $FULL_FILE
-
-# Low battery warning
-elif [ "$BATTERY_LEVEL" -le $WARNING_LEVEL ] && [ "$BATTERY_DISCHARGING" -eq 1 ] && [ ! -f $EMPTY_FILE ]; then
-    notify-send "Low Battery" "${BATTERY_LEVEL}% of battery remaining." -u critical -i battery-alert -r 9991
-    paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga &
-    touch $EMPTY_FILE
-
-# Critical battery warning
-elif [ "$BATTERY_LEVEL" -le $CRITICAL_LEVEL ] && [ "$BATTERY_DISCHARGING" -eq 1 ] && [ ! -f $CRITICAL_FILE ]; then
+# CRITICAL battery alert (checked first)
+if [ "$BATTERY_LEVEL" -le "$CRITICAL_LEVEL" ] && [ "$BATTERY_DISCHARGING" -eq 1 ] && [ ! -f "$CRITICAL_FILE" ]; then
     notify-send "Battery Critical" "The computer will shutdown soon." -u critical -i battery-alert -r 9991
     paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga &
-    touch $CRITICAL_FILE
+    touch "$CRITICAL_FILE"
+
+# LOW battery alert
+elif [ "$BATTERY_LEVEL" -le "$WARNING_LEVEL" ] && [ "$BATTERY_DISCHARGING" -eq 1 ] && [ ! -f "$EMPTY_FILE" ]; then
+    notify-send "Low Battery" "${BATTERY_LEVEL}% of battery remaining." -u critical -i battery-alert -r 9991
+    paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga &
+    touch "$EMPTY_FILE"
+
+# Fully charged on AC
+elif [ "$BATTERY_LEVEL" -gt 99 ] && [ "$BATTERY_DISCHARGING" -eq 0 ] && [ ! -f "$FULL_FILE" ]; then
+    notify-send "Battery Charged" "Battery is fully charged." -i battery -r 9991
+    paplay /usr/share/sounds/freedesktop/stereo/complete.oga &
+    touch "$FULL_FILE"
 fi
