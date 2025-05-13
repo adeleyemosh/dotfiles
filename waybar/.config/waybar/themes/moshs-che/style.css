@@ -104,6 +104,10 @@ window#waybar {
 #cpu,
 #memory,
 #custom-notification,
+#custom-tools,
+#custom-cliphist,
+#custom-hyprshade,
+#custom-hypridle,
 #tray {
   padding: 4px 10px;
   margin: 5px 6px;
@@ -174,6 +178,23 @@ window#waybar {
  #custom-notification {
     border: 2px solid @pastel-coral;
 }
+
+/* -----------------------------------------------------
+ * Tools
+ * ----------------------------------------------------- */
+ #custom-tools {
+    border: 2px solid @pastel-violet;
+}
+ #custom-cliphist {
+    border: 2px solid @pastel-cyan;
+}
+ #custom-hyprshade {
+    border: 2px solid @pastel-grape;
+}
+ #custom-hypridle {
+    border: 2px solid @pastel-salmon;
+}
+ 
 
 #tray {
   border: 2px solid @mauve;

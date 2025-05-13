@@ -15,6 +15,7 @@
     "bluetooth",
     "network",
     "pulseaudio",
+    "group/tools",
     "battery",
     "clock",
     "clock#simpleclock",
@@ -280,6 +281,56 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  }
+  },
+  
+   // Tools
+  "custom/tools": {
+    "format": "",
+    "tooltip-format": "Tools"
+  },
+
+  // Cliphist
+  "custom/cliphist": {
+    "format": "",
+    "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
+    "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
+  },
+  
+    // Hyprshade
+  "custom/hyprshade": {
+    "format": "",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
+  },
+
+  // Hypridle inhibitor
+  "custom/hypridle": {
+    "format": "",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/.config/hypr/scripts/hypridle.sh status",
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+  },
+  
+  // Group Tools
+  "group/tools": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/tools",
+      "custom/cliphist",
+      "custom/hypridle",
+      "custom/hyprshade"
+    ]
+  },
 
 }
