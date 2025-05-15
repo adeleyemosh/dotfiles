@@ -1,4 +1,5 @@
-/* # By knightfall01 on Github as a part of https://github.com/Knightfall01/Hyprland-config */
+@import '../../assets/colour-bank.css';
+
 
 * {
   border: none;
@@ -11,10 +12,11 @@ window#waybar {
   background: transparent;
 }
 
-#custom-arch, #workspaces {
+#custom-arch,
+#workspaces {
   border-radius: 10px;
-  background-color: #191a24;
-  color: #c0caf5;
+  background-color: @mosh-bg;
+  color: @mosh-fg;
   margin-top: 5px;
   margin-right: 15px;
   padding-top: 1px;
@@ -28,30 +30,32 @@ window#waybar {
 }
 
 #workspaces button {
-  background: #191a24;
-  color: #c0caf5;
+  background: @mosh-bg;
+  color: @mosh-fg;
 }
 
 #workspaces button.active {
-  color: #2ac3de;
+  color: @mosh-accent;
 }
 
-#clock, 
-#backlight, 
-#custom-cava, 
+#clock,
+#clock.simpleclock,
+#backlight,
+#custom-cava,
 #custom-updates,
-#temperature, 
-#cpu, 
-#pulseaudio, 
-#network, 
-#battery, 
-#tray, 
-#bluetooth, 
-#memory, 
+#temperature,
+#cpu,
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#bluetooth,
+#memory,
+#custom-power,
 #custom-playerctl {
   border-radius: 10px;
-  background-color: #191a24;
-  color: #c0caf5;
+  background-color: @mosh-bg;
+  color: @mosh-fg;
   margin-top: 5px;
   padding-left: 9px;
   padding-right: 9px;
@@ -60,13 +64,13 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: black;
+    background-color: @blink-bg;
+    color: @blink-fg;
   }
 }
 
 #battery.warning:not(.charging) {
-  background: #f38ba8;
+  background: @mosh-error;
   color: white;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -80,19 +84,11 @@ window#waybar {
   padding-left: 10px;
 }
 
-#custom-updates {
-  border-radius: 10px;
-  background-color: #191a24;
-  color: #c0caf5;
-  padding-left: 9px;
-  padding-right: 9px;
-  margin-right: 15px;
-}
-
+#custom-updates,
 #bluetooth {
   border-radius: 10px;
-  background-color: #191a24;
-  color: #c0caf5;
+  background-color: @mosh-bg;
+  color: @mosh-fg;
   padding-left: 9px;
   padding-right: 9px;
   margin-right: 15px;

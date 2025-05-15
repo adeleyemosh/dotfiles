@@ -37,3 +37,9 @@ fi
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/mosh/.lmstudio/bin"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/mosh/.dart-cli-completion/zsh-config.zsh ]] && . /home/mosh/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

@@ -1,0 +1,35 @@
+/* PulseAudio Icons */
+#pulseaudio:has(:contains("")) { color: @yellow; }
+#pulseaudio:has(:contains("")) { color: @peach; }
+#pulseaudio:has(:contains("")) { color: @green; }
+#pulseaudio:has(:contains("")) { color: @red; }
+
+/* Battery Icons */
+#battery:has(:contains("󰁺")) { color: @yellow; }
+#battery:has(:contains("󰁻")) { color: @peach; }
+#battery:has(:contains("󰁼")) { color: @green; }
+#battery:has(:contains("󰁽")) { color: @blue; }
+#battery:has(:contains("󰂄")) { color: @red; }
+#battery:has(:contains("󰂎")) { color: @lavender; }
+#battery:has(:contains("󰁹")) { color: @accent; }
+
+/* Network Icons */
+#network:has(:contains("")) { color: @sky; }
+#network:has(:contains("")) { color: @green; }
+#network:has(:contains("⚠")) { color: @red; }
+
+/* Clock Icons */
+#clock:has(:contains("")) { color: @sky; }
+#clock:has(:contains("")) { color: @lavender; }
+
+/* Bluetooth */
+#bluetooth:has(:contains("")) { color: @teal; }
+
+/* Custom Updates */
+#custom-updates:has(:contains("")) { color: @pastel-orange; }
+
+/* Power Button */
+#custom-power:has(:contains("⏻")) { color: @red; }
+
+/* Arch Logo */
+#custom-arch:has(:contains("")) { color: @blue; }
