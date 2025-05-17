@@ -1,0 +1,99 @@
+* {
+    border: none;
+    border-radius: 2px;
+    min-height: 0;
+    font-family: "Iosevka Nerd Font", "fira code"; 
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0px;
+}
+
+window#waybar {
+    background-color: rgba(42, 51, 55, 1);
+    border: 3px solid rgba(104, 167, 213, 1);
+}
+
+#workspaces button {
+    color: rgba(104, 167, 213, 1);
+}
+
+#workspaces button.active {
+    color: #EEB18D;
+}
+
+#workspaces button:hover {
+background-color: transparent;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* Shared styling for modules */
+#clock, #battery, #power-profiles-daemon, #backlight,
+#network, #pulseaudio, #custom-power, #bluetooth, #custom-mic {
+    border: 2px solid rgba(104, 167, 213, 1);
+    font-family: monospace;
+    background-color: #2a3337;
+    margin: 7px;
+}
+
+#clock:hover, #battery:hover, #power-profiles-daemon:hover, #backlight:hover,
+#network:hover, #pulseaudio:hover, #custom-power:hover, #bluetooth:hover,
+#custom-mic:hover {
+    background-color: rgba(104, 167, 213, 0.25);
+}
+
+/* Specific colors */
+#clock, #battery, #pulseaudio, #custom-mic {
+    color: #EEB18D;
+}
+
+#power-profiles-daemon, #network, #custom-power, #bluetooth, #backlight {
+    color: #56b4bc;
+}
+
+/* States and animations */
+@keyframes battery-charge {
+    50% { color: #26A65B; }
+}
+
+#battery.charging, #battery.plugged {
+    animation: battery-charge 1.5s steps(2) infinite;
+}
+
+@keyframes battery-low {
+    50% { color: #f53c3c; }
+}
+
+#battery.critical:not(.charging) {
+    animation: battery-low 1.5s steps(2) infinite;
+}
+
+#power-profiles-daemon.performance {
+    color: #f53c3c;
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio.muted {
+    color: #f53c3c;
+}
+
+@keyframes bluetooth-use {
+    50% { color: #56b4bc; }
+}
+
+#pulseaudio.bluetooth {
+    animation: bluetooth-use 1.5s steps(2) infinite;
+}
