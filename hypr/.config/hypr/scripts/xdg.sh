@@ -55,4 +55,8 @@ systemctl --user start xdg-desktop-portal-hyprland
 
 # Run waybar
 sleep $_sleep3
-~/.config/waybar/assets/scripts/launch.sh
+~/.config/waybar/assets/scripts/launch.sh &
+
+# Run eww
+sleep $_sleep3
+~/.config/eww/assets/scripts/launch.sh
