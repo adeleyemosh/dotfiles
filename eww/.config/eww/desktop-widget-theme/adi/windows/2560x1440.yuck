@@ -1,0 +1,149 @@
+;; ===============================
+;; Screen Resolution Config (2560x1440)
+;; ===============================
+
+;; ** Windows *************************************************************************
+
+(defwindow background 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 0 :y 0 :width "2560px" :height "1440px")
+	(bg))
+
+(defwindow profile 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 200 :y 200 :width 467 :height 587)
+	(user))
+
+(defwindow system 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 200 :y 807 :width 467 :height 433)
+	(system))
+
+(defwindow clock
+  :stacking "bg"
+  :focusable "false"
+  :monitor 0
+  :layer "background"
+  :geometry (geometry :x 687 :y 200 :width 467 :height 207)
+  (clock))
+
+(defwindow uptime 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 687 :y 427 :width 467 :height 207)
+	(uptime))
+
+(defwindow music 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 687 :y 653 :width 813 :height 373)
+	(music))
+
+(defwindow github 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 687 :y 1047 :width 188 :height 193)
+	(github))
+
+(defwindow reddit 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 894 :y 1047 :width 188 :height 193)
+	(reddit))
+
+(defwindow twitter 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1101 :y 1047 :width 188 :height 193)
+	(twitter))
+
+(defwindow youtube 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1308 :y 1047 :width 189 :height 193)
+	(youtube))
+
+(defwindow weather 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1173 :y 200 :width 733 :height 433)
+	(weather))
+
+(defwindow apps 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1520 :y 653 :width 387 :height 373)
+	(apps))
+
+(defwindow mail 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1520 :y 1047 :width 387 :height 193)
+	(mail))
+
+(defwindow logout 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1930 :y 200 :width 207 :height 207)
+	(logout))
+
+(defwindow sleep 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 2153 :y 200 :width 207 :height 207)
+	(sleep))
+
+(defwindow reboot 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1930 :y 427 :width 207 :height 207)
+	(reboot))
+
+(defwindow poweroff 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 2153 :y 427 :width 207 :height 207)
+	(poweroff))
+
+(defwindow folders 
+	:stacking "bg" 
+	:focusable "false" 
+	:monitor 0
+	:layer "background"
+	:geometry (geometry :x 1930 :y 653 :width 433 :height 587)
+	(folders))

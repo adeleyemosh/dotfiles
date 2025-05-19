@@ -1,0 +1,43 @@
+#!/bin/bash
+
+## File and config path
+FILE="$HOME/.cache/eww_launch.gross"
+CFG="$HOME/.config/eww/desktop-widget-theme/gross"
+EWW="$(which eww)"
+
+## Run daemon if it's not running
+if [[ ! $(pidof eww) ]]; then
+    $EWW daemon
+    sleep 1
+fi
+
+## Open all main windows (adjust if you name your windows differently)
+run_eww() {
+    $EWW --config "$CFG" open-many \
+        bg \
+        uinfo \
+        sys \
+        quote \
+        favorites \
+        cal \
+        smalldate \
+        quicksettings \
+        appbar \
+        notes \
+        bigpowermenu \
+        musicplayer \
+        network \
+        screenshot \
+        searchapps
+}
+
+## Toggle widgets
+if [[ ! -f "$FILE" ]]; then
+    touch "$FILE"
+    run_eww
+else
+    $EWW --config "$CFG" close \
+        bg uinfo sys quote favorites cal smalldate quicksettings \
+        appbar notes bigpowermenu musicplayer network screenshot searchapps
+    rm "$FILE"
+fi

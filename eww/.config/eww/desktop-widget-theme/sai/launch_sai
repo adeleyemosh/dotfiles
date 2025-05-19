@@ -1,0 +1,37 @@
+#!/bin/bash
+
+## Files and config
+FILE="$HOME/.cache/eww_launch.sai"
+CFG="$HOME/.config/eww/desktop-widget-theme/sai"
+EWW="$(which eww)"
+
+## Run eww daemon if not running already
+if [[ ! $(pidof eww) ]]; then
+    ${EWW} daemon
+    sleep 1
+fi
+
+## Open widgets
+run_eww() {
+    ${EWW} --config "$CFG" open-many \
+        main \
+        pfp \
+        song \
+        sys_usg \
+        song_prog \
+        song_ctl \
+        audio \
+        quote \
+        sys_tray \
+        time
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+    touch "$FILE"
+    run_eww
+else
+    ${EWW} --config "$CFG" close \
+        main pfp song sys_usg song_prog song_ctl audio quote sys_tray time
+    rm "$FILE"
+fi
