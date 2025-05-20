@@ -1,1 +1,1 @@
-/tama;/tama
+/adi;/adi
