@@ -1,0 +1,10 @@
+{
+  "custom/spotify": {
+    "format": "\uf1bc  {}",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "spotifatius toggle-liked",
+    "on-click-middle": "playerctl -p spotify next",
+    "exec": "spotifatius monitor"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "battery#bat2": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "\uf5e7  {capacity}%",
+    "format-plugged": "\uf1e6  {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-icons": [
+      "\uf244 ",
+      "\uf243 ",
+      "\uf242 ",
+      "\uf241 ",
+      "\uf240 "
+    ]
+  }
+}

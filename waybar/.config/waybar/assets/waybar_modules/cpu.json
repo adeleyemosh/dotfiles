@@ -1,0 +1,7 @@
+{
+  "cpu": {
+    "format": "<span foreground='#9ece6a'>\udb80\udf5b</span> {usage}%",
+    "tooltip": true,
+    "interval": 1
+  }
+}

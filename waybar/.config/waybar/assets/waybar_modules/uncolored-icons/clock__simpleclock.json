@@ -1,0 +1,6 @@
+{
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": "\uf017 {:%H:%M}"
+  }
+}

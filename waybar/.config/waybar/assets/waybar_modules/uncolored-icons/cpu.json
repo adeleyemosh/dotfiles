@@ -1,0 +1,7 @@
+{
+  "cpu": {
+    "format": "\udb80\udf5b {usage}%",
+    "tooltip": true,
+    "interval": 1
+  }
+}

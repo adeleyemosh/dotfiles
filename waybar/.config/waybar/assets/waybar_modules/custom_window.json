@@ -1,0 +1,7 @@
+{
+  "custom/window": {
+    "exec": "~/dotfiles/waybar/.config/waybar/window_title.sh",
+    "interval": 1,
+    "format": "{}"
+  }
+}

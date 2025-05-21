@@ -1,0 +1,8 @@
+{
+  "custom/power": {
+    "format": "\u23fb",
+    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click-right": "hyprlock",
+    "tooltip-format": "Left: Power menu\nRight: Lock screen"
+  }
+}

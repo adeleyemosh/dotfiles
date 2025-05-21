@@ -1,0 +1,23 @@
+{
+  "backlight": {
+    "format": "<span color='#d9b172'>{icon}</span>  {percent}%",
+    "format-icons": [
+      "\ue38d",
+      "\ue3d4",
+      "\ue3d3",
+      "\ue3d2",
+      "\ue3d1",
+      "\ue3d0",
+      "\ue3cf",
+      "\ue3ce",
+      "\ue3cd",
+      "\ue3cc",
+      "\ue3cb",
+      "\ue3ca",
+      "\ue3c9",
+      "\ue3c8",
+      "\ue39b"
+    ],
+    "scroll-step": 1
+  }
+}

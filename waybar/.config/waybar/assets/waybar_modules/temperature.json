@@ -1,0 +1,17 @@
+{
+  "temperature": {
+    "interval": 10,
+    "tooltip": true,
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon1/temp1_input",
+      "/sys/class/thermal/thermal_zone0/temp"
+    ],
+    "critical-threshold": 82,
+    "format-critical": "{temperatureC}\u00b0C {icon}",
+    "format": "{temperatureC}\u00b0C {icon}",
+    "format-icons": [
+      "\udb80\ude38"
+    ],
+    "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nvtop"
+  }
+}

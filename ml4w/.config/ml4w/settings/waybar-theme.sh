@@ -1,1 +1,1 @@
-/moshs-lio;/moshs-lio
+/mosh-lyn;/mosh-lyn

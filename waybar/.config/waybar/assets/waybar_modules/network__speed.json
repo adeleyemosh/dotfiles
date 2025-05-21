@@ -1,0 +1,23 @@
+{
+  "network#speed": {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": "{icon} \uf139 {bandwidthUpBytes} \uf13a {bandwidthDownBytes}",
+    "format-ethernet": "\udb80\udf18 \uf139 {bandwidthUpBytes} \uf13a {bandwidthDownBytes}",
+    "format-disconnected": "\udb80\udf19",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "\udb80\ude01 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} \udb80\udf18",
+    "tooltip-format-disconnected": "\udb80\udf19 Disconnected",
+    "min-length": 24,
+    "max-length": 24,
+    "format-icons": [
+      "\udb82\udd2f",
+      "\udb82\udd1f",
+      "\udb82\udd22",
+      "\udb82\udd25",
+      "\udb82\udd28"
+    ]
+  }
+}

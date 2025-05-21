@@ -1,0 +1,37 @@
+{
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "separate-outputs": false,
+    "active-only": false,
+    // turn on true to show same all workspaces on each monitor
+    "all-outputs": false,
+    "format-icons": {
+		// 1-10
+		"1": "一",
+		"2": "二",
+		"3": "三",
+		"4": "四",
+		"5": "五",
+		"6": "六",
+		"7": "七",
+		"8": "八",
+		"9": "九",
+		"10": "十",
+		
+		// 11-10
+		"11": "一",
+		"12": "二",
+		"13": "三",
+		"14": "四",
+		"15": "五",
+		"16": "六",
+		"17": "七",
+		"18": "八",
+		"19": "九",
+		"110": "十",
+		"active": "",
+		"urgent": "",
+		"default": ""
+	  }
+  }
+}

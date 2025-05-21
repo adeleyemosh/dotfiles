@@ -1,0 +1,20 @@
+{
+	  "pulseaudio": {
+		"format": "<span color='#f7768e'>\uf028</span> {volume}%",
+		"format-muted": "<span color='#f7768e'>\uf466  muted</span>",
+		"format-icons": {
+		  "headphone": "\uf025",
+		  "hands-free": "\uf294",
+		  "headset": "\uf025",
+		  "phone": "\uf095",
+		  "portable": "\uf095",
+		  "car": "\uf1b9",
+		  "default": [
+			"\uf026 ",
+			"\uf027 ",
+			"\uf028 "
+		  ]
+		},
+		"on-click": "pavucontrol"
+	  }
+}

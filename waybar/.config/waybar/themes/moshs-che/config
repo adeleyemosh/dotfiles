@@ -3,8 +3,24 @@
 	
 	// Load Modules
     "include": [
-        "~/.config/waybar/assets/moshs/modules.json",
-        "~/.config/waybar/assets/moshs/workspaces/classic.json"
+		"~/.config/waybar/assets/waybar_modules/custom_arch.json",
+		"~/.config/waybar/assets/waybar_modules/network__speed.json",
+		"~/.config/waybar/assets/waybar_modules/hyprland_window.json",
+		"~/.config/waybar/assets/waybar_modules/custom_updates.json",
+		"~/.config/waybar/assets/waybar_modules/cpu.json",
+		"~/.config/waybar/assets/waybar_modules/memory.json",
+		"~/.config/waybar/assets/waybar_modules/backlight.json",
+		"~/.config/waybar/assets/waybar_modules/bluetooth.json",
+		"~/.config/waybar/assets/waybar_modules/network.json",
+		"~/.config/waybar/assets/waybar_modules/pulseaudio.json",
+		"~/.config/waybar/assets/waybar_modules/group_tools.json",
+		"~/.config/waybar/assets/waybar_modules/battery.json",
+		"~/.config/waybar/assets/waybar_modules/clock.json",
+		"~/.config/waybar/assets/waybar_modules/clock__simpleclock.json",
+		"~/.config/waybar/assets/waybar_modules/custom_notification.json",
+		"~/.config/waybar/assets/waybar_modules/tray.json",
+		"~/.config/waybar/assets/waybar_modules/custom_power.json",
+        "~/.config/waybar/assets/waybar_modules/workspaces/classic.json"
     ],
 
 	"modules-left": [

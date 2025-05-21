@@ -1,0 +1,6 @@
+{
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": "<span color='#b69bf1'>\uf017</span> {:%H:%M}"
+  }
+}

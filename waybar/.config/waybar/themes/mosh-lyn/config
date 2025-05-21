@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 1, // Gaps between modules (4px)
+    
+    // Load Modules
+    "include": [
+		"~/.config/waybar/assets/waybar_modules/custom_arch.json",
+		"~/.config/waybar/assets/waybar_modules/network__speed.json",
+		"~/.config/waybar/assets/waybar_modules/hyprland_window.json",
+		"~/.config/waybar/assets/waybar_modules/custom_updates.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/cpu.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/memory.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/backlight.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/bluetooth.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/network.json",
+		"~/.config/waybar/assets/waybar_modules/pulseaudio2.json",
+		"~/.config/waybar/assets/waybar_modules/group_tools.json",
+		"~/.config/waybar/assets/waybar_modules/battery2.json",
+		"~/.config/waybar/assets/waybar_modules/clock.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/clock__simpleclock.json",
+		"~/.config/waybar/assets/waybar_modules/custom_notification.json",
+		"~/.config/waybar/assets/waybar_modules/tray.json",
+		"~/.config/waybar/assets/waybar_modules/uncolored-icons/custom_power.json",
+        "~/.config/waybar/assets/waybar_modules/workspaces/bare.json"
+    ],
+
+    // Choose the order of the modules
+    "modules-left": [
+		"custom/arch", 
+		"hyprland/workspaces",
+		"network#speed",
+		"hyprland/window"
+	],
+  
+	"modules-right": [
+		"custom/updates",
+		"cpu",
+		"memory",
+		"backlight",
+		"bluetooth",
+		"network",
+		"pulseaudio",
+		"group/tools",
+		"battery",
+		"clock",
+		"clock#simpleclock",
+		"custom/notification",
+		"tray",
+		"custom/power"
+	]
+    
+}
+

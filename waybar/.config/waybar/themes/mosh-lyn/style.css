@@ -1,0 +1,104 @@
+@import '../../assets/colour-bank.css';
+
+* {
+  border: none;
+  border-radius: 6px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+  /*box-shadow: 0px 2px 4px rgba(0,0,0,0.45);*/
+  margin: 2px;
+}
+
+window#waybar {
+  /*background: rgba(0, 0, 0, 0.8);*/
+  background: transparent;
+  color: #ffffff;
+  padding: 2px 4px;
+}
+
+#workspaces button {
+  background-color: #5c9566;
+  color: #ffffff;
+  padding: 0 10px;
+  margin: 0 2px;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+#workspaces button.active {
+  background-color: #3a6042;
+  box-shadow: inset 0 -2px 0 #ffffffaa;
+}
+
+#workspaces button:hover {
+  background-color: #6fbf7c;
+  box-shadow: inset 0 -2px 0 #ffffff55;
+}
+
+#window {
+  background: #2e3440;
+  color: #ddd;
+  padding: 0 10px;
+  margin: 0 2px;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  border: none;
+  font-weight: bold;
+}
+
+#custom-swaync,
+#custom-menu,
+#tray,
+#pulseaudio,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#battery.bat2,
+#custom-scripted_clock,
+#custom-notification,
+#custom-updates,
+#custom-arch,
+#network.speed,
+#bluetooth,
+#network,
+#group-tools,
+#clock,
+#clock.simpleclock,
+#custom-power {
+  padding: 0 10px;
+  margin: 0 3px;
+  color: #111;
+  font-weight: bold;
+}
+
+#custom-swaync { background-color: #7fb77e; }
+#custom-menu { background-color: #7fb77e; }
+#tray { background-color: #f97316; } /* Orange */
+#pulseaudio { background-color: #facc15; } /* Yellow */
+#cpu { background-color: #a3e635; } /* Lime */
+#memory { background-color: #f472b6; } /* Pink */
+#backlight { background-color: @pastel-aqua; } /* Blue */
+#battery { background-color: #7dd3fc; } /* Cyan */
+#battery.bat2 { background-color: #7dd3fc; }
+#custom-scripted_clock { background-color: #facc15; } /* Yellow */
+#custom-notification { background-color: #facc15; } /* Yellow */
+#custom-power { background-color: #ef4444; color: white; } /* Red */
+
+#custom-arch { background-color: #44475a; }
+
+
+#network.speed { background-color: @pastel-grape; }
+
+
+#custom-updates {  background-color: @pastel-coral; }
+
+#bluetooth {  background-color: @pastel-salmon;}
+
+#network {  background-color: @pastel-ivory;}
+
+#group-tools {  background-color: @pastel-grape;}
+
+#clock {  background-color: @pastel-butter;}
+
+#clock.simpleclock {  background-color: @pastel-mocha;}

@@ -1,0 +1,30 @@
+{
+	  "battery": {
+		"states": {
+		  "good": 95,
+		  "warning": 30,
+		  "critical": 20
+		},
+		"format": "<span size='13000' foreground='#a6e3a1'>{icon}</span> {capacity}%",
+		"format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
+		"format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+		"format-charging": "<span size='13000' foreground='#B1E3AD'>\uf1e6 </span>{capacity}%",
+		"format-plugged": "<span size='13000' foreground='#B1E3AD'>\uf1e6 </span>{capacity}%",
+		"format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
+		"format-full": "<span size='13000' foreground='#B1E3AD'>\uf004 </span>{capacity}%",
+		"format-icons": [
+		  "\udb80\udc8e",
+		  "\udb80\udc7a",
+		  "\udb80\udc7b",
+		  "\udb80\udc7c",
+		  "\udb80\udc7d",
+		  "\udb80\udc7e",
+		  "\udb80\udc7f",
+		  "\udb80\udc80",
+		  "\udb80\udc81",
+		  "\udb80\udc82",
+		  "\udb80\udc79"
+		],
+		"tooltip-format": "{time}"
+	  }
+}

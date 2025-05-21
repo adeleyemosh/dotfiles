@@ -1,0 +1,10 @@
+{
+  "bluetooth": {
+    "format": "<span foreground='#89b4fa'>\uf293</span> {status}",
+    "format-disabled": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": ""
+  }
+}

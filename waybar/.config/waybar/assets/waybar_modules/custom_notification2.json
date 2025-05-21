@@ -1,0 +1,15 @@
+{
+  "custom/notification2": {
+    "escape": true,
+    "exec": "swaync-client -swb",
+    "exec-if": "which swaync-client",
+    "format": "{icon}",
+    "format-icons": {
+      "none": "\udb80\udd7a",
+      "notification": "\udb82\udc5f"
+    },
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "return-type": "json",
+    "tooltip": false
+  }
+}
