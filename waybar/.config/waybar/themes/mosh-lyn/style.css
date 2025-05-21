@@ -74,7 +74,7 @@ window#waybar {
 
 #custom-swaync { background-color: #7fb77e; }
 #custom-menu { background-color: #7fb77e; }
-#tray { background-color: #f97316; } /* Orange */
+#tray { background-color: @base; }
 #pulseaudio { background-color: #facc15; } /* Yellow */
 #cpu { background-color: #a3e635; } /* Lime */
 #memory { background-color: #f472b6; } /* Pink */
@@ -82,23 +82,13 @@ window#waybar {
 #battery { background-color: #7dd3fc; } /* Cyan */
 #battery.bat2 { background-color: #7dd3fc; }
 #custom-scripted_clock { background-color: #facc15; } /* Yellow */
-#custom-notification { background-color: #facc15; } /* Yellow */
-#custom-power { background-color: #ef4444; color: white; } /* Red */
-
+#custom-notification { background-color: @pastel-yellow; }
+#custom-power { background-color: @softred; } /* Red */
 #custom-arch { background-color: #44475a; }
-
-
 #network.speed { background-color: @pastel-grape; }
-
-
 #custom-updates {  background-color: @pastel-coral; }
-
 #bluetooth {  background-color: @pastel-salmon;}
-
 #network {  background-color: @pastel-ivory;}
-
 #group-tools {  background-color: @pastel-grape;}
-
 #clock {  background-color: @pastel-butter;}
-
 #clock.simpleclock {  background-color: @pastel-mocha;}
