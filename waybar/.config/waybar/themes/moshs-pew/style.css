@@ -107,6 +107,10 @@ window#waybar {
 #custom-power, 
 #bluetooth, 
 #custom-updates,
+#custom-tools,
+#custom-cliphist,
+#custom-hypridle,
+#custom-hyprshade,
 #workspaces button {
   color: #a6dae2;
 }
