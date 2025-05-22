@@ -11,7 +11,7 @@
     "include": [
 		"~/.config/waybar/assets/waybar_modules/custom_arch.json",
 		"~/.config/waybar/assets/waybar_modules/network__speed.json",
-		"~/.config/waybar/assets/waybar_modules/custom_updates.json",
+		"~/.config/waybar/assets/waybar_modules/custom_updates_pew.json",
 		"~/.config/waybar/assets/waybar_modules/cpu.json",
 		"~/.config/waybar/assets/waybar_modules/memory.json",
 		"~/.config/waybar/assets/waybar_modules/backlight_pew.json",
@@ -36,14 +36,18 @@
     "tray",
     "network",
     "bluetooth",
-    "custom/mic"
+    "custom/mic",
+    "group/tools"
   ],
+  
   "modules-center": [
     "hyprland/workspaces#left",
     "power-profiles-daemon",
     "hyprland/workspaces#right"
   ],
+  
   "modules-right": [
+		"custom/updates",
     "battery",
     "pulseaudio",
     "backlight"
