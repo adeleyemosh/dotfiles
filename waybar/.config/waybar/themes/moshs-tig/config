@@ -4,188 +4,47 @@
     "height": 35,
     "spacing": 2,
     "margin": 0,
-
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/weather", "custom/quote"],
-    "modules-center": ["hyprland/window"],
+    
+    "include": [
+		"~/.config/waybar/assets/waybar_modules/workspaces/bare.json",
+		"~/.config/waybar/assets/waybar_modules/custom_updates.json",
+		"~/.config/waybar/assets/waybar_modules/backlight.json",
+		"~/.config/waybar/assets/waybar_modules/bluetooth.json",
+		"~/.config/waybar/assets/waybar_modules/network.json",
+		"~/.config/waybar/assets/waybar_modules/temperature.json",
+		"~/.config/waybar/assets/waybar_modules/custom_uptime.json",
+		"~/.config/waybar/assets/waybar_modules/disk.json",
+		"~/.config/waybar/assets/waybar_modules/group_hardware.json",
+		"~/.config/waybar/assets/waybar_modules/battery2.json",
+		"~/.config/waybar/assets/waybar_modules/pulseaudio.json",
+		"~/.config/waybar/assets/waybar_modules/mpd.json",
+		"~/.config/waybar/assets/waybar_modules/clock.json",
+		"~/.config/waybar/assets/waybar_modules/clock__simpleclock.json",
+		"~/.config/waybar/assets/waybar_modules/custom_notification.json",
+		"~/.config/waybar/assets/waybar_modules/tray.json",
+		"~/.config/waybar/assets/waybar_modules/custom_power.json"
+	],
+    
+    "modules-left": [
+		"hyprland/workspaces", 
+		"hyprland/window"
+	],
+    
+    "modules-center": [
+		"mpd"
+	],
+    
     "modules-right": [
         "custom/updates",
         "network",
         "bluetooth",
         "backlight",
         "group/hardware",
-        "battery",
         "pulseaudio",
+        "battery",
+        "clock",
+        "clock#simpleclock",
         "tray",
-        "custom/exit",
-        "clock"
-    ],
-
-    "hyprland/workspaces": {
-		"on-click": "activate",
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}",
-        "format-icons": {
-            "1": "󰖟", "2": "", "3": "", "4": "󰭹", "5": "󰕧", "6": "", "7": "", "8": "󰣇", "9": "", "10": ""
-        },
-        "persistent_workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [] }
-    },
-
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    
-    // Clock
-	"clock": {
-		"format": "{:%I:%M %p %a %Od.%Om.%Y}",
-		"on-click": "flatpak run com.ml4w.calendar",
-		"timezone": "",
-		"tooltip": false
-	},
-
-    "custom/weather": {
-        "exec": "curl 'https://wttr.in/?format=1'",
-        "interval": 3600,
-        "format": "{}",
-        "tooltip": true
-    },
-
-    "custom/quote": {
-        "format": "󰚛 {}",
-        "interval": 3600,
-        "exec": "fortune -s",
-        "on-click": "fortune | yad --text-info --width=400 --height=200 --title='Fortune'",
-        "tooltip": true
-    },
-    
-	// Power Menu
-	"custom/exit": {
-		"format": "",
-		"on-click": "~/.config/ml4w/scripts/wlogout.sh",
-		"on-click-right": "hyprlock",
-		"tooltip-format": "Left: Power menu\nRight: Lock screen"
-	},
-
-
-    "custom/updates": {
-        "format": " {}",
-        "tooltip-format": "{} updates",
-        "escape": true,
-        "return-type": "json",
-        "exec": "~/.config/ml4w/scripts/updates.sh",
-        "restart-interval": 1800,
-        "on-click": "alacritty -e ~/.config/ml4w/scripts/installupdates.sh",
-        "on-click-right": "~/.config/ml4w/settings/software.sh",
-        "tooltip": false
-    },
-
-    // Network
-	"network": {
-		"format": "{ifname}",
-		"format-wifi": " {essid} ({signalStrength}%)",
-		"format-ethernet": "  {ifname}",
-		"format-disconnected": "Disconnected ⚠",
-		"tooltip-format": " {ifname} via {gwaddri}",
-		"tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-		"tooltip-format-disconnected": "Disconnected",
-		"max-length": 50,
-		"on-click": "~/.config/ml4w/settings/networkmanager.sh",
-		"on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
-	},
-
-    "bluetooth": {
-        "format": " {status}",
-        "format-disabled": "",
-        "format-off": "",
-        "interval": 30,
-        "on-click": "blueman-manager",
-        "format-no-controller": ""
-    },
-
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "brightnessctl set +5%",
-        "on-scroll-down": "brightnessctl set 5%-"
-    },
-
-    "cpu": {
-        "format": "󰘚 {usage}%",
-        "tooltip": true,
-        "interval": 1,
-        "on-click": "alacritty -e htop"
-    },
-
-    "memory": {
-        "format": "󰍛 {}%",
-        "interval": 1,
-        "on-click": "alacritty -e htop"
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["󱃃", "󰔏", "󱃂"],
-        "on-click": "alacritty -e s-tui"
-    },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-icons": ["", "", "", "", ""]
-    },
-
-    "disk": {
-        "interval": 30,
-        "format": "󰋊 {percentage_used}%",
-        "path": "/",
-        "on-click": "alacritty -e gdu /"
-    },
-
-    "custom/uptime": {
-        "format": "󰔟 {}",
-        "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ minutes/m/'",
-        "interval": 60
-    },
-    
-    // Group Hardware
-	"group/hardware": {
-		"orientation": "inherit",
-		"drawer": {
-		  "transition-duration": 300,
-		  "children-class": "not-memory",
-		  "transition-left-to-right": false
-		},
-		"modules": ["cpu", "memory", "temperature", "custom/uptime", "disk"]
-	},
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰥰",
-            "headset": "󰋎",
-            "phone": "󰏲",
-            "portable": "󰄝",
-            "car": "󰄋",
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
-    },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing": 5
-    }
+        "custom/power"
+    ]
 }

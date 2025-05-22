@@ -1,0 +1,9 @@
+{
+	"custom/mic": {
+    "tooltip": false,
+    "format": "[ {} ]",
+    "exec": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q yes && echo 󰍭 || echo 󰍬",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "interval": 1
+  }
+}

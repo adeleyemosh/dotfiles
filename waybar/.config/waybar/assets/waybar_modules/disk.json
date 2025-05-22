@@ -1,0 +1,8 @@
+{
+	"disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "on-click": "alacritty -e gdu /"
+    }
+}

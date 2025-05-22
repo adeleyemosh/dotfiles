@@ -1,0 +1,8 @@
+{
+  "custom/power": {
+    "format": "[ <span foreground='#ffb7ce'>\u23fb</span> ]",
+    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click-right": "hyprlock",
+    "tooltip-format": "Left: Power menu\nRight: Lock screen"
+  }
+}

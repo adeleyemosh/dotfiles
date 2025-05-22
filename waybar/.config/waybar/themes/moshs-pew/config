@@ -6,10 +6,34 @@
   "margin-right": 12,
   "margin-bottom": 0,
   "margin-left": 12,
+  
+  // Load Modules
+    "include": [
+		"~/.config/waybar/assets/waybar_modules/custom_arch.json",
+		"~/.config/waybar/assets/waybar_modules/network__speed.json",
+		"~/.config/waybar/assets/waybar_modules/custom_updates.json",
+		"~/.config/waybar/assets/waybar_modules/cpu.json",
+		"~/.config/waybar/assets/waybar_modules/memory.json",
+		"~/.config/waybar/assets/waybar_modules/backlight_pew.json",
+		"~/.config/waybar/assets/waybar_modules/bluetooth_pew.json",
+		"~/.config/waybar/assets/waybar_modules/network2.json",
+		"~/.config/waybar/assets/waybar_modules/pulseaudio_pew.json",
+		"~/.config/waybar/assets/waybar_modules/group_tools.json",
+		"~/.config/waybar/assets/waybar_modules/battery_pew.json",
+		"~/.config/waybar/assets/waybar_modules/clock2.json",
+		"~/.config/waybar/assets/waybar_modules/custom_notification.json",
+		"~/.config/waybar/assets/waybar_modules/tray.json",
+		"~/.config/waybar/assets/waybar_modules/custom_power_pew.json",
+		"~/.config/waybar/assets/waybar_modules/custom_mic.json",
+		"~/.config/waybar/assets/waybar_modules/power_profile_daemon.json",
+		"~/.config/waybar/assets/waybar_modules/workspaces/pew-left.json",
+		"~/.config/waybar/assets/waybar_modules/workspaces/pew-right.json"
+    ],
 
   "modules-left": [
+		"custom/power",
     "clock",
-    "custom/power",
+    "tray",
     "network",
     "bluetooth",
     "custom/mic"
@@ -23,148 +47,5 @@
     "battery",
     "pulseaudio",
     "backlight"
-  ],
-
-  "hyprland/workspaces#left": {
-    "format": "[{icon}]",
-    "format-icons": {
-      "1": "А",
-      "2": "Б",
-      "active":""
-    },
-    "persistent-workspaces": {
-      "1": [],
-      "2": []
-    },
-    "ignore-workspaces": ["3", "4"]
-  },
-
-  "hyprland/workspaces#right": {
-    "format": "[{icon}]",
-    "format-icons": {
-      "3": "В",
-      "4": "Г",
-      "active":""
-    },
-    "persistent-workspaces": {
-      "3": [],
-      "4": []
-    },
-    "ignore-workspaces": ["1", "2"]
-  },
-
-  "clock": {
-    "format": "[ 󱑏 {:%H:%M %p }]",
-    "format-alt": "{:%Y-%m-%d}",
-    "tooltip": false
-  },
-
-  "backlight": {
-    "tooltip": false,
-    "format": " {icon} {percent}% ",
-    "format-icons": [
-      "󰹐 [░░░░░░░░░░]",
-      "󱩎 [█░░░░░░░░░]",
-      "󱩏 [██░░░░░░░░]",
-      "󱩐 [███░░░░░░░]",
-      "󱩑 [████░░░░░░]",
-      "󱩒 [█████░░░░░]",
-      "󱩓 [██████░░░░]",
-      "󱩔 [███████░░░]",
-      "󱩕 [████████░░]",
-      "󱩖 [█████████░]",
-      "󰛨 [██████████]"
-    ]
-  },
-
-  "battery": {
-    "states": {
-      "critical": 15
-    },
-    "tooltip": false,
-    "format": " {icon} {capacity}% ",
-    "format-charging": "   {icon} {capacity}% ",
-    "interval": 5,
-    "format-icons": [
-      "󰂎 [░░░░░░░░░░]",
-      "󰂎 [█░░░░░░░░░]",
-      "󱊡 [██░░░░░░░░]",
-      "󱊡 [███░░░░░░░]",
-      "󱊢 [████░░░░░░]",
-      "󱊢 [█████░░░░░]",
-      "󱊢 [██████░░░░]",
-      "󱊢 [███████░░░]",
-      "󱊣 [████████░░]",
-      "󱊣 [█████████░]",
-      "󱈏 [██████████]"
-    ]
-  },
-
-  "bluetooth": {
-    "tooltip": false,
-    "format": " [ 󰂯 ] ",
-    "format-disabled": " [ 󰂲 ] ",
-    "on-click": "blueman-manager",
-    "on-click-right": "rfkill toggle bluetooth"
-  },
-
-  "power-profiles-daemon": {
-    "format": " {icon} ",
-    "tooltip": true,
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "format-icons": {
-      "default": "balanced",
-      "performance": "REACTOR CRITICAL",
-      "balanced": "REACTOR MIDLOAD",
-      "power-saver": "REACTOR SLEEP"
-    }
-  },
-
-  "network": {
-    "tooltip": false,
-    "format": " [ {icon} ] ",
-    "format-ethernet": " [ 󰈀 ] ",
-    "format-disconnected": " [ 󰤫 ] ",
-    "on-click": "kitty nmtui",
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ]
-  },
-
-  "pulseaudio": {
-    "tooltip": false,
-    "format": " {icon} {volume}% ",
-    "format-muted": "2",
-    "format-icons": [
-      "󰕿 [░░░░░░░░░░]",
-      "󰕿 [█░░░░░░░░░]",
-      "󰕿 [██░░░░░░░░]",
-      "󰖀 [███░░░░░░░]",
-      "󰖀 [████░░░░░░]",
-      "󰖀 [█████░░░░░]",
-      "󰕾 [██████░░░░]",
-      "󰕾 [███████░░░]",
-      "󰕾 [████████░░]",
-      "󱄡 [█████████░]",
-      "󱄡 [██████████]"
-    ]
-  },
-
-  "custom/power": {
-    "tooltip": false,
-    "format": " [ 󰐥 ] ",
-    "on-click": "poweroff"
-  },
-
-  "custom/mic": {
-    "tooltip": false,
-    "format": " [ {} ] ",
-    "exec": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q yes && echo 󰍭 || echo 󰍬",
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "interval": 1
-  }
+  ]
 }
