@@ -1,16 +1,15 @@
 /** Global *******************************************/
 *{
 	all: unset;
-	font-family: feather;
-	font-family: Iosevka;
+	font-family: font-family: "JetBrainsMono NFP", "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif, "MesloLGS Nerd Font Mono Bold",  Museo Sans;
 }
 
 /** Background ***************************************/
-.bg {
-	background-image: url("images/bg.png");
-	background-color: #474D59;
-	opacity: 1;
-}
+/**.bg { **/
+/**	background-image: url("images/bg.png"); **/
+/**	background-color: #474D59; **/
+/**	opacity: 1; **/
+/**} **/
 
 /** Generic window ***********************************/
 .genwin {
