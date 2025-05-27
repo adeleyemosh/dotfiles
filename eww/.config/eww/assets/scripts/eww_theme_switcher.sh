@@ -12,29 +12,26 @@
 # Default widget themes path for Eww
 # -----------------------------------------------------
 themes_path="$HOME/.config/eww/desktop-widget-theme"
+settings_path="$HOME/.config/ml4w/settings"
+mkdir -p "$settings_path"
 
 # -----------------------------------------------------
 # Initialize arrays
 # -----------------------------------------------------
-listThemes=""
+listThemes=()
 listNames=""
 listNames2=""
 
 # -----------------------------------------------------
 # Read theme folders
 # -----------------------------------------------------
-sleep 0.2
-options=$(find "$themes_path" -maxdepth 2 -type d)
-for value in $options; do
-    if [ "$value" != "$themes_path" ]; then
-        if [ -f "$value/eww.yuck" ] && [ -f "$value/config.sh" ]; then
-            result=$(echo "$value" | sed "s#$themes_path/#/#g")
-            IFS='/' read -ra arrThemes <<<"$result"
-            listThemes[${#listThemes[@]}]="/${arrThemes[1]};$result"
-            source "$themes_path$result/config.sh"
-            listNames+="$theme_name\n"
-            listNames2+="$theme_name~"
-        fi
+for dir in "$themes_path"/*; do
+    [ -d "$dir" ] || continue
+    if [ -f "$dir/eww.yuck" ]; then
+        theme_name=$(basename "$dir")
+        listThemes+=("$theme_name")
+        listNames+="$theme_name\n"
+        listNames2+="$theme_name~"
     fi
 done
 
@@ -51,8 +48,8 @@ read -ra array <<<"$input"
 # Set new theme
 # -----------------------------------------------------
 if [ "$choice" ]; then
-    echo "Loading Eww widget theme..."
-    echo "${listThemes[$choice + 1]}" > ~/.config/ml4w/settings/eww-theme.sh
+    theme="${listThemes[$choice]}"
+    echo "$theme" > "$settings_path/eww-theme.sh"
     ~/.config/eww/assets/scripts/launch.sh
-    notify-send "Eww Theme changed" "to ${array[$choice]}"
+    notify-send "Eww Theme Changed" "to $theme"
 fi

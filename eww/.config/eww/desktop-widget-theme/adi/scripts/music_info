@@ -1,97 +1,86 @@
 #!/bin/bash
 
-## Get data
-STATUS="$(mpc status)"
 COVER="/tmp/.music_cover.jpg"
-MUSIC_DIR="$HOME/Music"
+FALLBACK_COVER="$HOME/.config/eww/images/music.png"
 
-## Get status
+# Functions
 get_status() {
-	if [[ $STATUS == *"[playing]"* ]]; then
+	if playerctl status 2>/dev/null | grep -q "Playing"; then
 		echo ""
 	else
 		echo "喇"
 	fi
 }
 
-## Get song
 get_song() {
-	song=`mpc -f %title% current`
-	if [[ -z "$song" ]]; then
-		echo "Offline"
-	else
-		echo "$song"
-	fi	
+	song=$(playerctl metadata title 2>/dev/null)
+	echo "${song:-Offline}"
 }
 
-## Get artist
 get_artist() {
-	artist=`mpc -f %artist% current`
-	if [[ -z "$artist" ]]; then
-		echo "Offline"
-	else
-		echo "$artist"
-	fi	
+	artist=$(playerctl metadata artist 2>/dev/null)
+	echo "${artist:-Offline}"
 }
 
-## Get time
 get_time() {
-	time=`mpc status | grep "%)" | awk '{print $4}' | tr -d '(%)'`
-	if [[ -z "$time" ]]; then
-		echo "0"
-	else
-		echo "$time"
-	fi	
-}
-get_ctime() {
-	ctime=`mpc status | grep "#" | awk '{print $3}' | sed 's|/.*||g'`
-	if [[ -z "$ctime" ]]; then
-		echo "0:00"
-	else
-		echo "$ctime"
-	fi	
-}
-get_ttime() {
-	ttime=`mpc -f %time% current`
-	if [[ -z "$ttime" ]]; then
-		echo "0:00"
-	else
-		echo "$ttime"
-	fi	
-}
+	pos=$(playerctl position 2>/dev/null | cut -d. -f1)
+	length=$(playerctl metadata mpris:length 2>/dev/null)
+	length_sec=$((length / 1000000))
 
-## Get cover
-get_cover() {
-	ffmpeg -i "${MUSIC_DIR}/$(mpc current -f %file%)" "${COVER}" -y &> /dev/null
-	STATUS=$?
-
-	# Check if the file has a embbeded album art
-	if [ "$STATUS" -eq 0 ];then
-		echo "$COVER"
+	if [[ -z "$pos" || -z "$length_sec" || "$length_sec" -eq 0 ]]; then
+		echo 0
 	else
-		echo "images/music.png"
+		echo $((pos * 100 / length_sec))
 	fi
 }
 
-## Execute accordingly
-if [[ "$1" == "--song" ]]; then
-	get_song
-elif [[ "$1" == "--artist" ]]; then
-	get_artist
-elif [[ "$1" == "--status" ]]; then
-	get_status
-elif [[ "$1" == "--time" ]]; then
-	get_time
-elif [[ "$1" == "--ctime" ]]; then
-	get_ctime
-elif [[ "$1" == "--ttime" ]]; then
-	get_ttime
-elif [[ "$1" == "--cover" ]]; then
-	get_cover
-elif [[ "$1" == "--toggle" ]]; then
-	mpc -q toggle
-elif [[ "$1" == "--next" ]]; then
-	{ mpc -q next; get_cover; }
-elif [[ "$1" == "--prev" ]]; then
-	{ mpc -q prev; get_cover; }
-fi
+
+get_ctime() {
+	pos=$(playerctl position 2>/dev/null)
+	if [[ -z "$pos" ]]; then
+		echo "0:00"
+	else
+		printf '%d:%02d\n' $((pos/60)) $((pos%60))
+	fi
+}
+
+get_ttime() {
+	length=$(playerctl metadata mpris:length 2>/dev/null)
+	if [[ -z "$length" ]]; then
+		echo "0:00"
+	else
+		# Convert microseconds to seconds
+		length=$((length / 1000000))
+		printf '%d:%02d\n' $((length/60)) $((length%60))
+	fi
+}
+
+get_cover() {
+	url=$(playerctl metadata mpris:artUrl 2>/dev/null)
+
+	if [[ "$url" == file://* ]]; then
+		path="${url#file://}"
+		if [[ -f "$path" ]]; then
+			cp "$path" "$COVER"
+			echo "$COVER"
+		else
+			echo "$FALLBACK_COVER"
+		fi
+	else
+		echo "$FALLBACK_COVER"
+	fi
+}
+
+# Execute based on argument
+case "$1" in
+	--song) get_song ;;
+	--artist) get_artist ;;
+	--status) get_status ;;
+	--time) get_time ;;
+	--ctime) get_ctime ;;
+	--ttime) get_ttime ;;
+	--cover) get_cover ;;
+	--toggle) playerctl play-pause ;;
+	--next) playerctl next ;;
+	--prev) playerctl previous ;;
+esac

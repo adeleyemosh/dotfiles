@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ## Open links in firefox
-FILE="$HOME/.cache/eww_launch.dashboard"
-CFG="$HOME/.config/eww/dashboard"
+FILE="$HOME/.cache/eww_launch.adi"
+CFG="$HOME/.config/eww/desktop-widet-theme/adi"
 EWW=`which eww`
 cmd="firefox --new-tab"
 

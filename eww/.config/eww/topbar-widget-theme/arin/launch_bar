@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EWW=`which eww`
-CFG="$HOME/.config/eww/arin"
+CFG="$HOME/.config/eww/topbar-widget-theme/arin"
 
 ## Run eww daemon if not running already
 if [[ ! `pidof eww` ]]; then

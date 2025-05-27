@@ -1,0 +1,79 @@
+;; ========================
+;; CYBERPUNK SYSTEM MONITOR WIDGET (Simplified)
+;; ========================
+
+;; Main Widget with Static Values
+(defwidget cyberpunk_monitor []
+  (box :class "cyberpunk-container" :orientation "v" :space-evenly false
+    ;; Status Section
+    (label :class "status-label" :text "[ CORE STATUS: ] Generating visuals.")
+
+    ;; Time Metrics Section
+    (box :class "section" :orientation "h" :space-evenly true
+      (label :text "[ REACTOR UPTIME ] 01:23:45")
+      (label :text "[ MELTDOWN CLOCK ] 17.0 minutes"))
+
+    ;; Temperature Metrics Section
+    (box :class "section" :orientation "h" :space-evenly true
+      (label :text "[ CPU TEMP ] 77.2°C")
+      (label :text "[ GPU TEMP ] 62°C"))
+
+    ;; Progress Bars Section
+    (box :class "section" :orientation "v"
+      (label :class "section-header" :text "[ CPU LOAD ]")
+      (scale :class "progress-bar" :value 50 :min 0 :max 100))
+    (box :class "section" :orientation "v"
+      (label :class "section-header" :text "[ RAM USAGE ]")
+      (scale :class "progress-bar" :value 30 :min 0 :max 100))
+    (box :class "section" :orientation "v"
+      (label :class "section-header" :text "[ STORAGE ]")
+      (scale :class "progress-bar" :value 70 :min 0 :max 100))
+
+    ;; Reactor Cells Section
+    (box :class "section" :orientation "h" :space-evenly true
+      (box :class "reactor-cell inactive" (label :text "A1"))
+      (box :class "reactor-cell active" (label :text "B2"))
+      (box :class "reactor-cell inactive" (label :text "C3"))
+      (box :class "reactor-cell inactive" (label :text "D4")))
+
+    ;; Power Grid Section
+    (box :class "section" :orientation "v"
+      (label :class "section-header" :text "[ POWER GRID ]")
+      (label :text "> ШОТРН: 57.10 W")
+      (label :text "> COC: 931.00 mV")
+      (label :text "> GPU: 1.39 mV")
+      (label :text "> ВХОД: 15.86 V"))
+
+    ;; Cooling Section
+    (box :class "section" :orientation "v"
+      (label :class "section-header" :text "[ COOLING ]")
+      (label :text "> CPU FAN: 2500 RPM")
+      (label :text "> FLOW: -")
+      (label :text "> GPU FAN: 2600 RPM")
+      (label :text "> FLOW: -"))
+
+    ;; Network Metrics Section
+    (box :class "network-section" :orientation "h" :space-evenly true
+      (box :orientation "v" :class "vertical-meter"
+        (label :text "[DOWNLOAD]")
+        (scale :orientation "v" :value 500 :min 0 :max 1000)
+        (label :text "500 KB/s"))
+      (box :orientation "v" :class "vertical-meter"
+        (label :text "[UPLOAD]")
+        (scale :orientation "v" :value 200 :min 0 :max 1000)
+        (label :text "200 KB/s"))
+      (box :orientation "v" :class "vertical-meter"
+        (label :text "[LATENCY]")
+        (scale :orientation "v" :value 50 :min 0 :max 100)
+        (label :text "50 ms"))
+      (box :orientation "v" :class "vpn-status"
+        (label :text "[VPN]")
+        (label :text "Active")))))
+
+;; Window Definition
+(defwindow cyberpunk_stats
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry :x "50px" :y "50px" :width "500px" :height "600px")
+  :stacking "fg"
+  (cyberpunk_monitor))

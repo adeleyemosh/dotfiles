@@ -9,8 +9,8 @@ cache_weather_hex=${cache_dir}/weather-hex
 cache_weather_icon=${cache_dir}/weather-icon
 
 ## Weather data
-KEY="YOUR_KEY"
-ID="CITY_ID"
+KEY="092b740dcea27790639eed52a30ff947"
+ID="2332459"
 UNIT="metric"	# Available options : 'metric' or 'imperial'
 
 ## Make cache dir
@@ -124,7 +124,7 @@ get_weather_data() {
 		echo " " > ${cache_weather_icon}
 		echo -e "Ah well, no weather huh? \nEven if there's no weather, it's gonna be a great day!" > ${cache_weather_quote}
 		echo "-" > ${cache_weather_degree}
-		echo "#adadff" > ${tcache_weather_hex}
+		echo "#adadff" > ${cache_weather_hex}
 	fi
 }
 

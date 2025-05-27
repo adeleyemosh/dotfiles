@@ -1,43 +1,72 @@
 #!/bin/bash
 
 # -----------------------------------------------------
-# EWW Theme launcher script
-# by Moshood Adeleye (2025)
+# EWW Theme Launcher - Fixed for adi theme
 # -----------------------------------------------------
 
-# Kill any running eww windows and clear cache
+CONFIG_DIR="$HOME/.config/eww/desktop-widget-theme"
+SETTINGS_PATH="$HOME/.config/ml4w/settings"
+STATE_FILE="$SETTINGS_PATH/eww-launch.active"
+THEME_CONFIG="$SETTINGS_PATH/eww-theme.sh"
+DEFAULT_THEME="adi"
+
+mkdir -p "$SETTINGS_PATH"
+
+# Determine selected theme
+if [[ -f "$THEME_CONFIG" ]]; then
+  THEME_NAME="$(cat "$THEME_CONFIG" | xargs)"
+else
+  THEME_NAME="$DEFAULT_THEME"
+fi
+
+CFG="$CONFIG_DIR/$THEME_NAME"
+EWW=$(which eww)
+
+# Validate theme directory
+if [[ ! -d "$CFG" ]]; then
+  notify-send "Eww Error" "Theme folder not found: $CFG"
+  exit 1
+fi
+
+# Kill any existing Eww
 pkill eww
-sleep 0.3
+sleep 0.5
+$EWW --config "$CFG" daemon &
+sleep 0.5
 
-# -----------------------------------------------------
-# Get selected theme from config file
-# -----------------------------------------------------
-theme_config="$HOME/.config/ml4w/settings/eww-theme.sh"
+# Get current resolution
+RES="$(xdpyinfo | awk '/dimensions:/ {print $2}')"
+WINDOWS=()
 
-# Fallback default
-default_theme="/adi"
+# Main yuck file
+MAIN_YUCK="$CFG/eww.yuck"
+# Resolution-specific file
+RES_YUCK="$CFG/windows/$RES.yuck"
 
-# Check and load
-if [ -f "$theme_config" ]; then
-    theme_path=$(cat "$theme_config")
-else
-    theme_path="$default_theme"
+# Create a temporary combined yuck file
+TEMP_YUCK="$CFG/.eww-combined.yuck"
+cp "$MAIN_YUCK" "$TEMP_YUCK"
+
+# Append resolution-specific content if exists
+if [[ -f "$RES_YUCK" ]]; then
+  echo "" >> "$TEMP_YUCK"
+  cat "$RES_YUCK" >> "$TEMP_YUCK"
 fi
 
-# Extract theme folder name from path
-IFS=';' read -ra arr <<< "$theme_path"
-theme="${arr[0]##*/}"   # e.g., sai, gross
+# Extract all window names from the combined file
+WINDOWS=$(grep -oP '(?<=\(defwindow )\S+' "$TEMP_YUCK" | sort -u)
 
-# -----------------------------------------------------
-# Execute theme's launcher script
-# -----------------------------------------------------
-launcher="$HOME/.config/eww/desktop-widget-theme/$theme/launch_$theme"
-
-if [ -f "$launcher" ]; then
-    chmod +x "$launcher"
-    "$launcher"
-else
-    notify-send "Eww Theme Error" "Launcher not found for theme '$theme'"
-    echo "❌ No launcher script found at $launcher"
+# Final check and launch
+if [[ -z "$WINDOWS" ]]; then
+  notify-send "Eww Error" "No windows found for theme: $THEME_NAME"
+  rm -f "$TEMP_YUCK"
+  exit 1
 fi
 
+# Open all detected windows
+$EWW --config "$CFG" open-many $WINDOWS
+echo "$THEME_NAME" > "$STATE_FILE"
+notify-send "Eww Theme Applied" "$THEME_NAME loaded successfully"
+
+# Clean up temporary file after delay
+(sleep 50; rm -f "$TEMP_YUCK") &

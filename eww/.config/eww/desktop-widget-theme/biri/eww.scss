@@ -1,0 +1,90 @@
+* {
+  all: unset;
+  font-family: 'Courier New', monospace;
+}
+
+.cyberpunk-container {
+  background-color: rgba(0, 0, 20, 0.85);
+  border: 1px solid #0ff;
+  border-radius: 5px;
+  padding: 15px;
+  color: #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.status-label {
+  color: #f0f;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section {
+  margin: 10px 0;
+  padding: 8px;
+  border-bottom: 1px dashed #0ff;
+}
+
+.section-header {
+  color: #0ff;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 200px;
+  background-color: #002;
+  trough {
+    background-color: #003;
+  }
+  highlight {
+    background-color: #0ff;
+  }
+}
+
+.reactor-cell {
+  padding: 5px 10px;
+  border: 1px solid #0ff;
+  border-radius: 3px;
+  &.active {
+    background-color: #0f0;
+    color: #000;
+  }
+  &.inactive {
+    background-color: #300;
+    color: #f00;
+  }
+}
+
+.network-section {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid #f0f;
+}
+
+.vertical-meter {
+  width: 60px;
+  align-items: center;
+}
+
+.vertical-meter scale {
+  height: 80px;
+  width: 10px;
+  background-color: #002;
+  trough {
+    background-color: #003;
+  }
+  highlight {
+    background-color: #0ff;
+  }
+}
+
+.vertical-meter label {
+  color: #fff;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.vpn-status label {
+  color: #fff;
+  text-align: center;
+}
