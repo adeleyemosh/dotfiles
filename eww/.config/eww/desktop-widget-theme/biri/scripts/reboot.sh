@@ -1,5 +1,5 @@
 # Confirmation
-dir="~/.config/rofi/new-custom/powermenu"
+dir="~/.config/rofi/powermenu"
 confirm_exit() {
 	rofi -dmenu\
 		-i\
@@ -15,7 +15,7 @@ msg() {
 
 		ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-			systemctl poweroff
+			systemctl reboot
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0
         else
