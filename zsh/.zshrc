@@ -43,3 +43,4 @@ export PATH="$PATH:/home/mosh/.lmstudio/bin"
 [[ -f /home/mosh/.dart-cli-completion/zsh-config.zsh ]] && . /home/mosh/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+alias claude="/home/mosh/.claude/local/claude"
