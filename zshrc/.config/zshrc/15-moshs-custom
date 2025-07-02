@@ -121,8 +121,6 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-export GEMINI_API_KEY="AIzaSyCdSW172ZVzFd2JaLihDERtp_K8mFAIrpM"
-
 # Make nano the default editor
 
 export EDITOR='vim'
