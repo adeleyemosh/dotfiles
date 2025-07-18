@@ -38,3 +38,5 @@ fi
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/mosh/.lmstudio/bin"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"

@@ -119,6 +119,9 @@ unsetopt SHARE_HISTORY
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PATH="$HOME/.local/bin:$PATH"
+
+
 export HISTCONTROL=ignoreboth:erasedups
 
 # Make nano the default editor

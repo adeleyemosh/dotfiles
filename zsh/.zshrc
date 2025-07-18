@@ -44,3 +44,5 @@ export PATH="$PATH:/home/mosh/.lmstudio/bin"
 ## [/Completion]
 
 alias claude="/home/mosh/.claude/local/claude"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
